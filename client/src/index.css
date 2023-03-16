@@ -1,3 +1,11 @@
+/* TODO - uncomment the below */
+
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+
+/* TODO - delete all below */
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
