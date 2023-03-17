@@ -1,29 +1,5 @@
 const { Schema, model } = require("mongoose");
 
-// Product Model - parent document
-const productSchema = new Schema({
-    name: {
-        type: String,
-        required: true,
-    },
-    // Can include product details ie. mature sizing
-    description: {
-        type: String,
-        require: true,
-    },
-    // Main image for product
-    image: {
-        type: String,
-        required: true,
-    },
-    // Can include things like care instructions and will render as HTML
-    notes: {
-        type: String,
-    },
-    // References the statsSchema sub-document
-    details: [detailsSchema],
-});
-
 // Stats model - sub-document
 const detailsSchema = new Schema({
     // Small, medium or large sizing
@@ -52,6 +28,31 @@ const detailsSchema = new Schema({
         type: String,
     },
 });
+// Product Model - parent document
+const productSchema = new Schema({
+    name: {
+        type: String,
+        required: true,
+    },
+    // Can include product details ie. mature sizing
+    description: {
+        type: String,
+        require: true,
+    },
+    // Main image for product
+    image: {
+        type: String,
+        required: true,
+    },
+    // Can include things like care instructions and will render as HTML
+    notes: {
+        type: String,
+    },
+    // References the statsSchema sub-document
+    details: [detailsSchema],
+});
+
+
 
 const product = model("product", productSchema);
 
