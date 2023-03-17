@@ -21,11 +21,11 @@ const productSchema = new Schema({
         type: String,
     },
     // References the statsSchema sub-document
-    stats: [statsSchema],
+    details: [detailsSchema],
 });
 
 // Stats model - sub-document
-const statsSchema = new Schema({
+const detailsSchema = new Schema({
     // Small, medium or large sizing
     size: {
         type: String,
