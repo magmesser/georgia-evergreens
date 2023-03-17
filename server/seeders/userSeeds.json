@@ -1,0 +1,29 @@
+[
+    {
+      "name": "Lian Perez",
+      "email": "lperez@gmail.com",
+      "password": "password01"
+    },
+    {
+        "name": "Cherry Viens",
+        "email": "cella@gmail.com",
+        "password": "password02"
+      },
+      {
+        "name": "Eliot Crandall",
+        "email": "ecrandall@gmail.com",
+        "password": "password03"
+      },
+      {
+        "name": "Maggie Messer",
+        "email": "mmesser@gmail.com",
+        "password": "password04"
+      },
+      {
+        "name": "Bryan Quero",
+        "email": "bquero@gmail.com",
+        "password": "password05"
+      }
+   
+  ]
+  
