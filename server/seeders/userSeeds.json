@@ -1,26 +1,26 @@
 [
     {
-      "name": "Lian Perez",
+      "username": "Lian_Perez",
       "email": "lperez@gmail.com",
       "password": "password01"
     },
     {
-        "name": "Cherry Viens",
+        "username": "Cherry_Viens",
         "email": "cella@gmail.com",
         "password": "password02"
       },
       {
-        "name": "Eliot Crandall",
+        "username": "Eliot_Crandall",
         "email": "ecrandall@gmail.com",
         "password": "password03"
       },
       {
-        "name": "Maggie Messer",
+        "username": "Maggie_Messer",
         "email": "mmesser@gmail.com",
         "password": "password04"
       },
       {
-        "name": "Bryan Quero",
+        "username": "Bryan_Quero",
         "email": "bquero@gmail.com",
         "password": "password05"
       }
