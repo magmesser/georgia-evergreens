@@ -19,13 +19,6 @@ const UserSchema = new mongoose.Schema({
         required: true,
         minlength: 8,
       },
-    products: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Product'
-        }
-    ],
-
 });
 
 const User = mongoose.model('User', UserSchema);
