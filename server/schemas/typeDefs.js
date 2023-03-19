@@ -24,7 +24,7 @@ const typeDefs = gql`
         reducedPrice: Float
         weight: Amount
         height: Amount
-        image: String
+        image: Image
     }
 
     type Product {
@@ -47,7 +47,6 @@ const typeDefs = gql`
     type Query {
         users: [User]
         products: [Product]
-        styles: [Style]
         orders: [Order]
     }
 `;
