@@ -1,10 +1,30 @@
 const { Schema, model } = require("mongoose");
 
-// Stats model - sub-document
-const detailsSchema = new Schema({
-    // Small, medium or large sizing
-    size: {
+// Image model - sub-document
+const imageSchema = new Schema({
+    original: {
         type: String,
+        required: true,
+    },
+    thumbnail: {
+        type: String,
+    },
+});
+
+const amountSchema = new Schema({
+    value: {
+        type: Number,
+        required: true,
+    },
+    unit: {
+        type: String,
+    },
+});
+
+// Stats model - sub-document
+const stylesSchema = new Schema({
+    name: {
+        type: String
     },
     // Full price of product
     price: {
@@ -16,17 +36,13 @@ const detailsSchema = new Schema({
         type: Number,
     },
     // Weight of product
-    weight: {
-        type: String,
-    },
+    weight: amountSchema,
+
     // Height of product
-    height: {
-        type: String,
-    },
+    height: amountSchema,
+
     // Image of product
-    image: {
-        type: String,
-    },
+    images: [imageSchema],
 });
 // Product Model - parent document
 const productSchema = new Schema({
@@ -40,19 +56,14 @@ const productSchema = new Schema({
         require: true,
     },
     // Main image for product
-    image: {
-        type: String,
-        required: true,
-    },
+    images: [imageSchema],
     // Can include things like care instructions and will render as HTML
     notes: {
         type: String,
     },
     // References the statsSchema sub-document
-    details: [detailsSchema],
+    styles: [stylesSchema],
 });
-
-
 
 const product = model("product", productSchema);
 
