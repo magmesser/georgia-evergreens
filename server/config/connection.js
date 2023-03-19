@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
 
 // Connect to the Mongo DB
-mongoose.connect('mongodb://localhost/greentreesDB',
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost:27017/greentreesDB',
   {
-    useNewUrlParser: true
-  }
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  },
 );
 
 // Set up promises with mongoose
