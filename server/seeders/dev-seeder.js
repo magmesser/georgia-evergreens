@@ -17,7 +17,8 @@ const AMOUNT_UNITS = ["lbs", "cm", "ft", "kg"];
 const STYLE_NAMES = ["small", "medium", "large"];
 
 function randFloat(high, low = 0) {
-    return Math.random() * (high - low) + low;
+    let f =  Math.random() * (high - low) + low;
+    return Number(f.toFixed(2))
 }
 
 function randPrice(high = 1000, low = 100) {
@@ -29,7 +30,10 @@ function randInt(high = 1, low = 0) {
 }
 
 function randomChoice(array) {
-    return array[randInt(array.length) + 1];
+    if (array.length == 1) {
+        return array[0]
+    }
+    return array[randInt(array.length)];
 }
 
 function newImage() {

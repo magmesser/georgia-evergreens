@@ -22,7 +22,7 @@ const amountSchema = new Schema({
 });
 
 // Stats model - sub-document
-const stylesSchema = new Schema({
+const styleSchema = new Schema({
     name: {
         type: String
     },
@@ -62,7 +62,7 @@ const productSchema = new Schema({
         type: String,
     },
     // References the statsSchema sub-document
-    styles: [stylesSchema],
+    styles: [styleSchema],
 });
 
 const product = model("product", productSchema);
