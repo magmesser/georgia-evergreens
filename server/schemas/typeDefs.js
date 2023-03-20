@@ -1,4 +1,4 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
     type User {
@@ -8,23 +8,32 @@ const typeDefs = gql`
         password: String
     }
 
+    type Amount {
+        value: Float
+        unit: String
+    }
+
+    type Image {
+        original: String
+        thumbnail: String
+    }
+
+    type Style {
+        name: String
+        price: Float
+        reducedPrice: Float
+        weight: Amount
+        height: Amount
+        image: Image
+    }
+
     type Product {
         _id: ID
         name: String
         description: String
-        image: String
+        images: [Image]
         notes: String
-        stats: [Stats]
-    }
-
-    type Stats {
-        _id: ID
-        size: Int
-        price: Float
-        reducedPrice: Float
-        weight: String
-        height: String
-        image: String
+        styles: [Style]
     }
 
     type Order {
@@ -34,13 +43,12 @@ const typeDefs = gql`
         date: String
         price: String
     }
-    
+
     type Query {
         users: [User]
         products: [Product]
-        stats: [Stats]
-        order: [Order]
+        orders: [Order]
     }
-    `;
+`;
 
-    module.exports = typeDefs;
+module.exports = typeDefs;
