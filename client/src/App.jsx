@@ -9,6 +9,7 @@ import Header from "./components/Header"
 import ContactForm from "./pages/Contact";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
+import Profile from "./pages/Profile";
 
 
 const client = new ApolloClient({
@@ -17,7 +18,6 @@ const client = new ApolloClient({
 });
 
 function App() {
-    // const [count, setCount] = useState(0)
 
     return (
       <div> 
@@ -34,6 +34,7 @@ function App() {
                 </Routes>
                 <Footer />
             </Router>
+
         </ApolloProvider>
     </div> 
     );
