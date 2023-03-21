@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ContactForm from "./pages/Contact";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
+import Profile from "./pages/Profile";
 
 const client = new ApolloClient({
     uri: "/graphql",
@@ -15,24 +16,10 @@ const client = new ApolloClient({
 });
 
 function App() {
-    // const [count, setCount] = useState(0)
 
     return (
         <ApolloProvider client={client}>
-            <Router>
-                <div className="App">
-                    <Home />
-                    {/* <header className="App-header"> */}
-                    {/* <img src={logo} className="App-logo" alt="logo" /> */}
-                    {/* <div className='py-6'>
-          <ContactForm />
-        </div>
-      </header> */}
-
-                    {/* Footer component */}
-                    <Footer />
-                </div>
-            </Router>
+            
         </ApolloProvider>
     );
 }
