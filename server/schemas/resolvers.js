@@ -5,6 +5,9 @@ const resolvers = {
         products: async () => {
             return await Product.find({});
         }, 
+        product: async (parent, { productId }) => {
+            return await Product.findOne({_id: productId });
+        }, 
         users: async () => {
             return await User.find({});
         }
