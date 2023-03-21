@@ -20,15 +20,15 @@ function ImageCard(props) {
 
 function Banner() {
     return (
-        <div className="relative">
-            <div className="flex w-screen justify-center">
+        <div className="relative w-screen">
+            <div className="flex justify-center">
                 <img
-                    className="object-contain w-screen z-0 "
+                    className=" w-screen z-0 "
                     src="/imgs/emeraldhouse.png"
                     alt="House with emerald green arborvitae"
                 />
             </div>
-            <div className="absolute gap-3 flex flex-row text-left top-20 p-4 [background-color:rgba(242,241,233)] [width:100%] h-30 z-10 rounded ">
+            <div className="absolute gap-3 flex flex-row text-left top-20 m-4 p-4 [background-color:rgba(242,241,233)] [width:100%] h-30 z-10 rounded ">
                 <ImageCard
                     img="/imgs/delivery.jpg"
                     title="We Deliver & Install"
