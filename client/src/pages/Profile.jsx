@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Login from "../components/Login";
-import Signup from "../components/Signup";
+import SignUp from "../components/Signup";
+import ProfileSingle from "../components/ProfileSingle"
 
 const Profile = () => {
   const [currentForm, setCurrentForm] = useState("login");
@@ -14,8 +15,10 @@ const Profile = () => {
       {currentForm === "login" ? (
         <Login onFormSwitch={toggleForm} />
       ) : (
-        <Signup onFormSwitch={toggleForm} />
+        <SignUp onFormSwitch={toggleForm} />
       )}
+
+      <ProfileSingle />
     </>
   );
 };
