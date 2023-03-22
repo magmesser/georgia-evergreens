@@ -7,7 +7,7 @@ function ImageCard(props) {
                 <img
                     className="rounded "
                     src={props.img}
-                    alt="delivery truck"
+                    alt="icon"
                 />
             </div>
             <div className="h-max rounded [color:#11402f]">

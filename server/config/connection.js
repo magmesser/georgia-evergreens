@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+mongoose.set('strictQuery', true)
 // Connect to the Mongo DB
 mongoose.connect(
   process.env.MONGODB_URI || 'mongodb://localhost:27017/greentreesDB',
