@@ -5,9 +5,10 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 // Importing pages
-import ContactForm from "./pages/Contact";
+// import ContactForm from "./pages/Contact";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
+import Products from "./pages/Products";
 
 const client = new ApolloClient({
     uri: "/graphql",
@@ -22,6 +23,7 @@ function App() {
             <Router>
                 <div className="App">
                     <Home />
+                    <Products />
                     {/* <header className="App-header"> */}
                     {/* <img src={logo} className="App-logo" alt="logo" /> */}
                     {/* <div className='py-6'>
