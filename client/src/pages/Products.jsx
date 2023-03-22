@@ -12,10 +12,7 @@ import {
   BanknotesIcon,
   StarIcon,
   HeartIcon,
-  /* WifiIcon,
-  HomeIcon,
-  TvIcon,
-  FireIcon, */
+
 } from "@heroicons/react/24/solid";
 
 export default function Example() {
@@ -61,26 +58,7 @@ export default function Example() {
                 <BanknotesIcon className="h-5 w-5" />
               </span>
             </Tooltip>
-            {/*   <Tooltip content="Free wifi">
-            <span className="cursor-pointer rounded-full border border-blue-500/5 bg-blue-500/5 p-3 text-blue-500 transition-colors hover:border-blue-500/10 hover:bg-blue-500/10 hover:!opacity-100 group-hover:opacity-70">
-              <WifiIcon className="h-5 w-5" />
-            </span>
-          </Tooltip> */}
-            {/*  <Tooltip content="2 bedrooms">
-            <span className="cursor-pointer rounded-full border border-blue-500/5 bg-blue-500/5 p-3 text-blue-500 transition-colors hover:border-blue-500/10 hover:bg-blue-500/10 hover:!opacity-100 group-hover:opacity-70">
-              <HomeIcon className="h-5 w-5" />
-            </span>
-          </Tooltip> */}
-            {/* <Tooltip content={`65" HDTV`}>
-            <span className="cursor-pointer rounded-full border border-blue-500/5 bg-blue-500/5 p-3 text-blue-500 transition-colors hover:border-blue-500/10 hover:bg-blue-500/10 hover:!opacity-100 group-hover:opacity-70">
-              <TvIcon className="h-5 w-5" />
-            </span>
-          </Tooltip> */}
-            {/*  <Tooltip content="Fire alert">
-            <span className="cursor-pointer rounded-full border border-blue-500/5 bg-blue-500/5 p-3 text-blue-500 transition-colors hover:border-blue-500/10 hover:bg-blue-500/10 hover:!opacity-100 group-hover:opacity-70">
-              <FireIcon className="h-5 w-5" />
-            </span>
-          </Tooltip> */}
+            
             <Tooltip content="available +10 more">
               <span className="cursor-pointer rounded-full border border-blue-500/5 bg-blue-500/5 p-3 text-blue-500 transition-colors hover:border-blue-500/10 hover:bg-blue-500/10 hover:!opacity-100 group-hover:opacity-70">
                 +20
