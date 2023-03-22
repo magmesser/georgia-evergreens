@@ -11,8 +11,7 @@ import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { StoreProvider } from "./utils/state";
 
-// Importing pages
-// import ContactForm from "./pages/Contact";
+// Importing page
 
 import Products from "./pages/Products";
 import Header from "./components/Header"
@@ -54,7 +53,7 @@ function App() {
                         <Header />
                         <Routes>
                             <Route path="/" element={<Home />} />
-                            {/* <Route path="/products" element={<Products />} /> */}
+                            <Route path="/products" element={<Products />} />
                             <Route path="/contact" element={<ContactForm />} />
                             <Route path="/profile" element={<Profile />} />
                             {/* <Route path="/cart" element={<Cart />} /> */}
