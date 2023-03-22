@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import emailjs from "emailjs-com";
 
 
@@ -16,7 +16,9 @@ const ContactForm = () => {
             console.log(result.text);
         }, (error) => {
             console.log(error.text);
-        });
+        })
+        .then(alert("Your message has been sent"))
+      .then(e.target.reset());;
     };
 
     return (

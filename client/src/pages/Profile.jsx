@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Login from "../components/Login";
 import SignUp from "../components/Signup";
-import ProfileSingle from "../components/ProfileSingle"
+import ProfileSingle from "../components/ProfileSingle";
+import Auth from "../utils/auth";
 
 const Profile = () => {
   const [currentForm, setCurrentForm] = useState("login");
@@ -12,13 +13,20 @@ const Profile = () => {
 
   return (
     <>
-      {currentForm === "login" ? (
-        <Login onFormSwitch={toggleForm} />
+      {Auth.loggedIn() ? (
+        <div>
+          {/* if logged in display profilesingle, if not display login/signup forms */}
+          <ProfileSingle />
+        </div>
       ) : (
-        <SignUp onFormSwitch={toggleForm} />
+        <div>
+          {currentForm === "login" ? (
+            <Login onFormSwitch={toggleForm} />
+          ) : (
+            <SignUp onFormSwitch={toggleForm} />
+          )}
+        </div>
       )}
-
-      <ProfileSingle />
     </>
   );
 };
