@@ -3,16 +3,16 @@ import { useMutation } from "@apollo/client";
 
 import { ADD_USER } from "../utils/mutations";
 
-// import Auth from '../utils/auth';
+import Auth from "../utils/auth";
 
 const Signup = (props) => {
-    const [formState, setFormState] = useState({
-        username: '',
-        email: '',
-        password: '',
-      });
+  const [formState, setFormState] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
 
-  const [addUser, { error, data }] = useMutation(ADD_USER);
+  const [addUser, { data }] = useMutation(ADD_USER);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -32,7 +32,7 @@ const Signup = (props) => {
         variables: { ...formState },
       });
 
-    //   Auth.login(data.addUser.token);
+      Auth.login(data.addUser.token);
     } catch (e) {
       console.error(e);
     }
@@ -41,36 +41,42 @@ const Signup = (props) => {
   return (
     <div className="auth-form-container">
       <h2>Sign Up</h2>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="username">username</label>
-        <input
-          value={formState.name}
-          onChange={handleChange}
-          type="text"
-          placeholder="your username"
-          id="username"
-          name="username"
-        ></input>
-        <label htmlFor="email">email</label>
-        <input
-          value={formState.email}
-          onChange={handleChange}
-          type="email"
-          placeholder="youremail@gmail.com"
-          id="email"
-          name="email"
-        ></input>
-        <label htmlFor="password">password</label>
-        <input
-          value={formState.password}
-          onChange={handleChange}
-          type="password"
-          placeholder="********"
-          id="password"
-          name="password"
-        ></input>
-        <button type="submit">Log In</button>
-      </form>
+      <div>
+        {data ? (
+          <p>Success!</p>
+        ) : (
+          <form onSubmit={handleSubmit}>
+            <label htmlFor="username">username</label>
+            <input
+              value={formState.name}
+              onChange={handleChange}
+              type="text"
+              placeholder="your username"
+              id="username"
+              name="username"
+            ></input>
+            <label htmlFor="email">email</label>
+            <input
+              value={formState.email}
+              onChange={handleChange}
+              type="email"
+              placeholder="youremail@gmail.com"
+              id="email"
+              name="email"
+            ></input>
+            <label htmlFor="password">password</label>
+            <input
+              value={formState.password}
+              onChange={handleChange}
+              type="password"
+              placeholder="********"
+              id="password"
+              name="password"
+            ></input>
+            <button type="submit">Log In</button>
+          </form>
+        )}
+      </div>
       <button onClick={() => props.onFormSwitch("login")}>
         Already have an account? Login here.
       </button>
