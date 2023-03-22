@@ -7,7 +7,7 @@ import { QUERY_USER } from '../utils/queries';
 import Auth from '../utils/auth';
 
 const ProfileSingle = () => {
-  const { username: userParam  } = useParams();
+  const { username: userParam } = useParams();
 
   const { loading, data } = useQuery(QUERY_USER , {
     variables: { username: userParam },
@@ -23,7 +23,7 @@ const ProfileSingle = () => {
     return <div>Loading...</div>;
   }
 
-  if (!user?.id) {
+  if (!user?.username) {
     return (
       <h4>
         You need to be logged in to see this. Use the navigation links above to
@@ -36,7 +36,7 @@ const ProfileSingle = () => {
     <div>
       <div className="flex-row justify-center mb-3">
         <h2 className="col-12 col-md-10 bg-dark text-light p-3 mb-5">
-          Viewing {user.username}'s profile.
+        Viewing {userParam ? `${user.username}'s` : 'your'} profile.
         </h2>
 
         <div>

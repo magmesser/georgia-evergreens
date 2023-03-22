@@ -45,12 +45,11 @@ export const QUERY_SINGLE_PRODUCT = gql`
     `;
 
     export const QUERY_USER = gql`
-        query getUser($userId: ID!) {
-            user(userId: $userId) {
-                _id
-                username
-                email
-                password
-            }
+    query user($username: String!) {
+        user(username: $username) {
+          _id
+          username
+          email
         }
-        `;
+      }
+    `;

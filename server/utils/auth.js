@@ -1,6 +1,6 @@
 const jwtocken = require('jsonwebtoken');
-const config = require('../config/config');
-const User = require('../models/user');
+const config = require('../config/connection');
+// const User = require('../models/user');
 
 // Set token secret and expiration date
 const secret = config.secret;
@@ -9,7 +9,7 @@ const expiration = '2h';
 module.exports = {
   // function for our authenticated routes
 
-  authMiddleware: function ({ req }) {
+  authMiddleware: function ({ req, res }) {
 
     // allows token to be sent via  req.query or header}
     let token = req.body.token || req.query.token || req.headers.authorization;
