@@ -1,24 +1,23 @@
 import React, { useState } from "react";
+import emailjs from "emailjs-com";
 
-// fill in later with the backend end point for our contact form.
-const FORM_ENDPOINT = "";
 
 const ContactForm = () => {
-    const [submitted, setSubmitted] = useState(false);
-    const handleSubmit = () => {
-        setTimeout(() => {
-            setSubmitted(true);
-        }, 100);
-    };
+    const form = useRef();
 
-    if (submitted) {
-        return (
-            <>
-                <div className="test-2xl">Thank you!</div>
-                <div className="text-md">We'll reach out soon!</div>
-            </>
-        );
-    }
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+    emailjs.sendForm('service_bwg4wxs',
+        'template_3yqv3t9',
+        form.current,
+        '-0fBDvvdgcSeYE7uC')
+        .then((result) => {
+            console.log(result.text);
+        }, (error) => {
+            console.log(error.text);
+        });
+    };
 
     return (
         <>
@@ -26,8 +25,8 @@ const ContactForm = () => {
         <p className="text-center m-3">If you'd like a customer service representative to contact you for a specific order, please fill out the form below and we'll be in touch soon!</p>
         <form
             className="m-5 grid place-items-center"
-            action={FORM_ENDPOINT}
-            onSubmit={handleSubmit}
+            ref={form}
+            onSubmit={sendEmail}
             method="POST"
             target="_blank">
             <div className="mb-3 w-1/2">
