@@ -10,7 +10,6 @@ function Images({images}) {
                     alt="tree"
                     className="w-lg m-5"
                     src={`${images[0].original}`}
-                    // {require("../assets/imgs/dev/placeholder.jpg")}
                 />
             </>
         );
@@ -22,7 +21,7 @@ function Images({images}) {
         );
     }
 }
-
+// Function to choose the 
 function StylesSelector(sytles) {
     return <>
 
