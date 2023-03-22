@@ -11,7 +11,10 @@ import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 // Importing pages
-import Header from "./components/Header";
+// import ContactForm from "./pages/Contact";
+
+import Products from "./pages/Products";
+import Header from "./components/Header"
 import ContactForm from "./components/Contact";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -42,6 +45,7 @@ const client = new ApolloClient({
 });
 
 function App() {
+
   return (
     <div>
       <ApolloProvider client={client}>
@@ -58,7 +62,7 @@ function App() {
         </Router>
       </ApolloProvider>
     </div>
-  );
+  );    
 }
 
 export default App;
