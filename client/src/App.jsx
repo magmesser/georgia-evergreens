@@ -5,6 +5,10 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 // Importing pages
+
+// import ContactForm from "./pages/Contact";
+
+import Products from "./pages/Products";
 import Header from "./components/Header"
 import ContactForm from "./components/Contact";
 import Footer from "./components/Footer";
@@ -22,7 +26,6 @@ function App() {
     return (
       <div> 
         <ApolloProvider client={client}>
-
             <Router>
                 <Header />
                 <Routes>
