@@ -9,6 +9,7 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { StoreProvider } from "./utils/state";
 
 // Importing pages
 // import ContactForm from "./pages/Contact";
@@ -45,24 +46,25 @@ const client = new ApolloClient({
 });
 
 function App() {
-
-  return (
-    <div>
-      <ApolloProvider client={client}>
-        <Router>
-          <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            {/* <Route path="/products" element={<Products />} /> */}
-            <Route path="/contact" element={<ContactForm />} />
-            <Route path="/profile" element={<Profile />} />
-            {/* <Route path="/cart" element={<Cart />} /> */}
-          </Routes>
-          <Footer />
-        </Router>
-      </ApolloProvider>
-    </div>
-  );    
+    return (
+        <div>
+            <ApolloProvider client={client}>
+                <Router>
+                    <StoreProvider>
+                        <Header />
+                        <Routes>
+                            <Route path="/" element={<Home />} />
+                            {/* <Route path="/products" element={<Products />} /> */}
+                            <Route path="/contact" element={<ContactForm />} />
+                            <Route path="/profile" element={<Profile />} />
+                            {/* <Route path="/cart" element={<Cart />} /> */}
+                        </Routes>
+                        <Footer />
+                    </StoreProvider>
+                </Router>
+            </ApolloProvider>
+        </div>
+    );
 }
 
 export default App;
