@@ -5,14 +5,14 @@ import { ADD_USER } from "../utils/mutations";
 
 import Auth from "../utils/auth";
 
-const Signup = (props) => {
+const SignUp = (props) => {
   const [formState, setFormState] = useState({
     username: "",
     email: "",
     password: "",
   });
 
-  const [addUser, { data }] = useMutation(ADD_USER);
+  const [addUser, { error, data }] = useMutation(ADD_USER);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -60,7 +60,7 @@ const Signup = (props) => {
               value={formState.email}
               onChange={handleChange}
               type="email"
-              placeholder="youremail@gmail.com"
+              placeholder="youremail@email.com"
               id="email"
               name="email"
             ></input>
@@ -73,9 +73,14 @@ const Signup = (props) => {
               id="password"
               name="password"
             ></input>
-            <button type="submit">Log In</button>
+            <button type="submit">Sign Up</button>
           </form>
         )}
+        {error && (
+              <div className="my-3 p-3 bg-danger text-white">
+                {error.message}
+              </div>
+            )}
       </div>
       <button onClick={() => props.onFormSwitch("login")}>
         Already have an account? Login here.
@@ -84,4 +89,4 @@ const Signup = (props) => {
   );
 };
 
-export default Signup;
+export default SignUp;
