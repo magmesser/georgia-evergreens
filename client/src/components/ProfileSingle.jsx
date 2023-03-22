@@ -16,7 +16,7 @@ const ProfileSingle = () => {
   const user = data?.me || data?.user || {};
   // navigate to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
-    return <Navigate to="/me" />;
+    return <Navigate to="/profile" />;
   }
 
   if (loading) {
@@ -25,7 +25,7 @@ const ProfileSingle = () => {
 
   if (!user?.username) {
     return (
-      <h4>
+      <h4 className="text-center m-3">
         You need to be logged in to see this. Use the navigation links above to
         sign up or log in!
       </h4>
@@ -33,15 +33,15 @@ const ProfileSingle = () => {
   }
 
   return (
-    <div>
-      <div className="flex-row justify-center mb-3">
-        <h2 className="col-12 col-md-10 bg-dark text-light p-3 mb-5">
+    <div className="m-5 grid place-items-center">
+      <div className="px-6 py-4 max-w-sm rounded overflow-hidden">
+        <h2 className="font-bold text-center text-xl mb-2">
         Viewing {userParam ? `${user.username}'s` : 'your'} profile.
         </h2>
 
         <div>
-          <h2>Your Orders</h2>
-          <p>Coming Soon!</p>
+          <h2 className="text-center text-3xl">Your Orders</h2>
+          <p className="text-center m-3">Coming Soon!</p>
         </div>
         
       </div>
