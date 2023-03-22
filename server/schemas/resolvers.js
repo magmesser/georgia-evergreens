@@ -12,3 +12,7 @@ const resolvers = {
 };
 
 module.exports = resolvers;
+
+// [product: async (parent, { productId }) => {
+//     return await Product.findOne({_id: productId });
+// }, ]

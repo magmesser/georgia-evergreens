@@ -1,9 +1,4 @@
-#root {
-  /* max-width: 1280px; */
-  margin: 0 auto;
-  /* padding: 2rem; */
-  text-align: center;
-}
+
 
 nav {
   background-color: #CF9A40;
@@ -57,3 +52,4 @@ nav div li:first-child {
     animation: logo-spin infinite 20s linear;
   }
 } */
+
