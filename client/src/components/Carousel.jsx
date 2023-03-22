@@ -43,8 +43,8 @@ class Carousel extends Component {
 
     render() {
         return (
-            <div className="pt-9">
-                <div className="max-w-lg h-72 flex overflow-hidden relative">
+            <div className="w-1/2">
+                <div className=" [height:200px] flex overflow-hidden relative">
                     {CarouselData.map((slide, index) => {
                         return (
                             <img
