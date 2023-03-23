@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/imgs/dev/gelogo.png";
-import { BsPersonCircle } from 'react-icons/bs';
+import { BsPersonCircle, BsCartFill } from 'react-icons/bs';
 
 function Header() {
     return (
@@ -10,11 +10,11 @@ function Header() {
 
             <nav className="">
                 <ul className="grid grid-cols-8">
-                    <li className="m-5"><Link to="/">Home</Link></li>
-                    <li className="m-5"><Link to="/products">Products</Link></li>
-                    <li className="m-5 col-span-4 "><Link to="/contact">Contact</Link></li>
-                    <li className="m-5"><Link to="/profile"><BsPersonCircle /></Link></li>
-                    <li className="m-5"><Link to="/cart">🛍️</Link></li>
+                    <li className="m-5"><Link className=" hover:text-gray-800" to="/">Home</Link></li>
+                    <li className="m-5"><Link className=" hover:text-gray-800"to="/products">Products</Link></li>
+                    <li className="m-5 col-span-4 "><Link className=" hover:text-gray-800" to="/contact">Contact</Link></li>
+                    <li className="m-5"><Link className=" hover:text-gray-800" to="/profile"><BsPersonCircle /></Link></li>
+                    <li className="m-5"><Link className=" hover:text-gray-800" to="/cart"><BsCartFill/></Link></li>
                     </ul>
             </nav>
 

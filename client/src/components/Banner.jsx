@@ -36,7 +36,7 @@ function Banner() {
                     </p>
                 </div>
             </div>
-            <div className="absolute  opacity-70 gap-3 flex flex-row text-left -bottom-0 m-4 p-4 [background-color:rgba(242,241,233)] [width:100%] [height:90px] z-10 rounded ">
+            <div className="absolute  opacity-70 gap-3 flex flex-row text-left -bottom-0  p-4 [background-color:rgba(242,241,233)] [width:100%] [height:90px] z-10 rounded ">
                 <ImageCard
                     img="/imgs/trees-icon.png"
                     title="Order"
