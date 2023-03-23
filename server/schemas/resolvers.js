@@ -4,11 +4,20 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
+        // Finding all products
         products: async () => {
             return await Product.find({});
         }, 
         users: async () => {
             return await User.find({});
+        },
+        // Finding a single product
+        getProduct: async (parent, args, context, info) => {
+            return await Product.findOne({_id: args._id})
+        },
+        // For searching for a product by it's name 
+        getProductsWithName: async (parent, args, context) => {
+          return (await Product.find({})).filter((p) => p.name.toLowerCase().includes(args.name.toLowerCase()))
         },
         me: async (parent, args, context) => {
             if (context.user) {
@@ -46,7 +55,3 @@ Mutation: {
 };
 
 module.exports = resolvers;
-
-// [product: async (parent, { productId }) => {
-//     return await Product.findOne({_id: productId });
-// }, ]

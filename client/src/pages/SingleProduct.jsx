@@ -1,6 +1,8 @@
 import React from "react";
+import { useParams } from "react-router-dom"
 import { useStoreContext } from "../utils/state";
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../utils/actions";
+import { useQuery, mutation } from "@apollo/client"
 
 function Images({images}) {
     if (images.length > 0) {
@@ -22,25 +24,36 @@ function Images({images}) {
     }
 }
 // Function to choose the 
-function StylesSelector(sytles) {
-    return <>
+// function StylesSelector(sytles) {
+//     return <>
 
-    </>;
+//     </>;
+// }
+
+function getProduct (id) {
+    
 }
 
-const SingleProduct = ({item}) => {
-    const { name, _id, description, images, notes, styles } = item;
+const SingleProduct = () => {
+    // const { name, _id, description, images, notes, styles } = item;
+    const [product, setProduct] = React.useState(null);
     const [state, dispatch] = useStoreContext();
     const { cart } = state;
+    const {id} = useParams()
+
+    React.useEffect(()=> {
+        getProduct(id)
+        .then(setProduct)
+    }, [id])
 
     function addToCart() {
         // Checking to see if a particular item is already in cart
-        const itemInCart = cart.find((_item) => _item._id === _id);
+        const itemInCart = cart.find((_item) => _item._id === id);
         if (itemInCart) {
             console.log('Update cart')
             dispatch({
                 type: UPDATE_CART_QUANTITY,
-                _id: _id,
+                _id: id,
                 productQuantity: parseInt(itemInCart.productQuantity) + 1,
             });
             // If item is not already in the cart add one of item
@@ -48,7 +61,7 @@ const SingleProduct = ({item}) => {
             console.log('add to cart')
             dispatch({
                 type: ADD_TO_CART,
-                product: { ...item, productQuantity: 1 },
+                product: { ...product, productQuantity: 1 },
             });
         }
     }
@@ -56,14 +69,14 @@ const SingleProduct = ({item}) => {
     return (
         <>
             <div className="grid grid-cols-4">
-                <h2 className="text-3xl m-5 col-span-4 text-left">{name}</h2>
+                <h2 className="text-3xl m-5 col-span-4 text-left">{product.name}</h2>
 
                 {/* TODO: REMOVE Testing cart */}
                 <p>{cart.length}</p>
                 {cart.map((i) => {return (<>{i.productQuantity}</>)})}
                 {/* TODO: REMOVE Testing cart */}
 
-                <Images images={images} />
+                <Images images={product.images} />
                 <form className="m-5 text-left">
                     <div className="radio">
                         <input type="radio" value="small" checked={true} />

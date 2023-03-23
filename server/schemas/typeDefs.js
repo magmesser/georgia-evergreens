@@ -2,7 +2,7 @@ const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
   type User {
-    _id: ID
+    _id: ID!
     username: String
     email: String
     password: String
@@ -28,7 +28,7 @@ const typeDefs = gql`
   }
 
   type Product {
-    _id: ID
+    _id: ID!
     name: String
     description: String
     images: [Image]
@@ -37,7 +37,7 @@ const typeDefs = gql`
   }
 
   type Order {
-    _id: ID
+    _id: ID!
     user: [User]
     number: ID
     date: String
@@ -52,6 +52,8 @@ const typeDefs = gql`
   type Query {
     users: [User]
     products: [Product]
+    getProduct(_id: ID!): Product
+    getProductsWithName(name: String!): [Product]
     orders: [Order]
     me: User
   }

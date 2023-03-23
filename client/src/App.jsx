@@ -19,7 +19,7 @@ import ContactForm from "./components/Contact";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
-import SingleProduct from "./components/SingleProduct";
+import SingleProduct from "./pages/SingleProduct";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({

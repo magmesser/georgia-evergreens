@@ -29,8 +29,8 @@ query getProducts {
 `;
 
 export const QUERY_SINGLE_PRODUCT = gql`
-    query getSingleProduct($productId: ID!) {
-        products(productId: $productId) {
+    query GetProduct($id: ID!) {
+        getProduct(_id: $id) {
             _id
             name
             images{
@@ -43,8 +43,14 @@ export const QUERY_SINGLE_PRODUCT = gql`
                 name
                 price
                 reducedPrice
-                weight
-                height
+                weight {
+                  value
+                  unit
+                }
+                height { 
+                  value 
+                  unit
+                }
             }
         }
     }
