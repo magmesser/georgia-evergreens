@@ -17,7 +17,7 @@ import {
 //   TvIcon,
 //   FireIcon, */
 // } from "@heroicons/react/24/solid";
-import LeylandCypress from '../assets/imgs/dev/leyland-cypress.jpeg';
+import LeylandCypress from '../assets/imgs/leyland-cypress.jpeg';
 import {Link} from 'react-router-dom';
 
 const ProductsData = [

@@ -35,15 +35,16 @@ function Images({ images }) {
 function SingleProduct() {
     // const { name, _id, description, images, notes, styles } = item;
     const { id } = useParams();
-    console.log(id);
-    const [product, setProduct] = React.useState([]);
+    const [product, setProduct] = React.useState([])
     const [state, dispatch] = useStoreContext();
     const { cart } = state;
     // const loading = true;
     const { loading, error } = useQuery(QUERY_SINGLE_PRODUCT, {
         variables: { id },
         onCompleted: (data) => {
-            setProduct(data.getProduct);
+            if (data && data.getProduct) {
+                setProduct(data.getProduct);
+            }
         },
     });
 
