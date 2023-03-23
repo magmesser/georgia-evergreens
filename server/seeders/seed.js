@@ -11,11 +11,12 @@ db.once("open", async () => {
     try {
         await Product.deleteMany({});
         await User.deleteMany({});
+
         // Product seeder function
-        productSeeds = makeProducts(10)
-        console.log(productSeeds[0])
-        console.log(productSeeds[0].images[0])
-        console.log(productSeeds[0].styles[0])
+        const productSeeds = makeProducts(10)
+        // console.log(productSeeds[0])
+        // console.log(productSeeds[0].images[0])
+        // console.log(productSeeds[0].styles[0])
         await Product.create(productSeeds);
         await User.create(userSeeds);
     } catch (err) {
