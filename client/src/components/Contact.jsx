@@ -23,7 +23,7 @@ const ContactForm = () => {
 
     return (
         <>
-        <h2 className="text-center text-3xl">Questions?</h2>
+        <h2 className="text-center text-3xl pt-10">Questions?</h2>
         <p className="text-center m-3">If you'd like a customer service representative to contact you for a specific order, please fill out the form below and we'll be in touch soon!</p>
         <form
             className="m-5 grid place-items-center"

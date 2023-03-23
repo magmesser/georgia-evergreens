@@ -20,7 +20,7 @@ function ImageCard(props) {
 
 function Banner() {
     return (
-        <div className="relative w-screen">
+        <div className="relative w-screen pt-10">
             <div className="flex justify-center">
                 <img
                     className=" w-screen z-0 "
@@ -32,7 +32,7 @@ function Banner() {
                 <div className="[width:50%] flex flex-row ml-5">
                     <p className="[font-size:4.2vw] [color:rgba(242,241,233)]">
                         Create beautiful evergreen privacy with our premium
-                        trees
+                        trees.
                     </p>
                 </div>
             </div>

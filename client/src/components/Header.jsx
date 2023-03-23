@@ -6,23 +6,22 @@ import { BsPersonCircle, BsCartFill } from 'react-icons/bs';
 function Header() {
     return (
 
-        <header >
+        <header className="">
 
-            <nav >
-                
-                <ul className="flex flex-wrap items-center mt-3  sm:mt-0">
-                    <li className="mr-4md:mr-6"><Link className=" hover:text-gray-800" to="/">Home</Link></li>
-                    <li><Link className=" hover:text-gray-800" to="/products">Products</Link></li>
-                    <li><Link className=" hover:text-gray-800" to="/contact">Contact</Link></li>
-                </ul>
-                <div>
-                    <li><Link className=" hover:text-gray-800" to="/profile"><BsPersonCircle /></Link></li>
-                    <li><Link className=" hover:text-gray-800" to="/cart"><BsCartFill/></Link></li>
-                </div>
+            <nav className="">
+                <ul className="grid grid-cols-8">
+                    <li className="m-5"><Link className=" hover:text-gray-800" to="/">Home</Link></li>
+                    <li className="m-5"><Link className=" hover:text-gray-800"to="/products">Products</Link></li>
+                    <li className="m-5 col-span-4 "><Link className=" hover:text-gray-800" to="/contact">Contact</Link></li>
+                    <li className="m-5"><Link className=" hover:text-gray-800" to="/profile"><BsPersonCircle /></Link></li>
+                    <li className="m-5"><Link className=" hover:text-gray-800" to="/cart"><BsCartFill/></Link></li>
+                    </ul>
             </nav>
 
-            <div>
-                <img src={logo} alt="logo" />
+            <div className="grid grid-cols-3 max-h-60 place-items-center">
+                <div className="col-span-1"></div>
+                <img className="col-span-1 max-w-xs" src={logo} alt="logo" />
+                <div className="col-span-1"></div>
             </div>
         </header>
 

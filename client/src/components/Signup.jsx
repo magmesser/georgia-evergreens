@@ -39,7 +39,7 @@ const SignUp = (props) => {
   };
 
   return (
-    <div className="auth-form-container">
+    <div className="auth-form-container pt-10">
       <h2 className="text-center text-3xl">Sign Up</h2>
       <div>
         {data ? (
