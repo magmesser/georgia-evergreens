@@ -3,29 +3,47 @@ import { Link } from "react-router-dom";
 import logo from "../assets/imgs/gelogo.png";
 import { BsPersonCircle, BsCartFill } from 'react-icons/bs';
 
+
 function Header() {
-    return (
+  return (
+    <header className="">
+      <nav className="">
+        <ul className="pb-4 flex flex-wrap items-center mt-3  mt-auto flow-root">
+          <li className="m-5 mr-4 md:mr-6 float-left">
+            <Link className=" hover:text-gray-800 duration-200" to="/">
+              Home
+            </Link>
+          </li>
+          <li className="m-5 mr-4 md:mr-6 float-left">
+            <Link className=" hover:text-gray-800 duration-200" to="/products">
+              Products
+            </Link>
+          </li>
+          <li className="m-5 mr-4 md:mr-6 float-left">
+            <Link className=" hover:text-gray-800 duration-200" to="/contact">
+              Contact
+            </Link>
+          </li>
+          <li className="m-5 mr-4 md:mr-6 float-right">
+            <Link className=" hover:text-gray-800 duration-200" to="/profile">
+              <BsPersonCircle className="text-2xl"/>
+            </Link>
+          </li>
+          <li className="m-5 mr-4 md:mr-6 float-right">
+            <Link className=" hover:text-gray-800 duration-200" to="/cart">
+              <BsCartFill className="text-2xl"/>
+            </Link>
+          </li>
+        </ul>
+      </nav>
 
-        <header className="">
-
-            <nav className="">
-                <ul className="grid grid-cols-8">
-                    <li className="m-5"><Link className=" hover:text-gray-800" to="/">Home</Link></li>
-                    <li className="m-5"><Link className=" hover:text-gray-800"to="/products">Products</Link></li>
-                    <li className="m-5 col-span-4 "><Link className=" hover:text-gray-800" to="/contact">Contact</Link></li>
-                    <li className="m-5"><Link className=" hover:text-gray-800" to="/profile"><BsPersonCircle /></Link></li>
-                    <li className="m-5"><Link className=" hover:text-gray-800" to="/cart"><BsCartFill/></Link></li>
-                    </ul>
-            </nav>
-
-            <div className="grid grid-cols-3 max-h-60 place-items-center">
-                <div className="col-span-1"></div>
-                <img className="col-span-1 max-w-xs" src={logo} alt="logo" />
-                <div className="col-span-1"></div>
-            </div>
-        </header>
-
-    );
+      <div className="grid grid-cols-3 max-h-60 place-items-center">
+        <div className="col-span-1"></div>
+        <img className="col-span-1 max-w-xs" src={logo} alt="logo" />
+        <div className="col-span-1"></div>
+      </div>
+    </header>
+  );
 }
 
 export default Header;
