@@ -55,11 +55,11 @@ const Footer = () => {
       </div>
 
       {/* divider line */}
-      <hr class="my-6 m-4 w-10/12 [border-color:#79A637] border-gray-200 sm:mx-auto lg:my-8" />
+      <hr className="my-6 m-4 w-10/12 [border-color:#79A637] border-gray-200 sm:mx-auto lg:my-8" />
 
       <div className="w-full mx-auto container pb-4 md:flex md:items-center md:justify-center">
         {/* footer copyright and credits  */}
-        <span class="text-sm sm:text-center">Site built by CLEMB. 
+        <span className="text-sm sm:text-center">Site built by CLEMB. 
           &copy; 2023 Georgia Evergreens LLC. All Rights Reserved.
         </span>
         

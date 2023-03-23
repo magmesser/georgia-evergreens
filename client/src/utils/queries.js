@@ -1,77 +1,88 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const QUERY_PRODUCTS = gql`
-query getProducts {
-  products {
-      _id
-      name
-      images{
-          original
-          thumbnail
-      }
-      description
-      notes
-      styles {
-          name
-          price
-          reducedPrice
-          weight {
-            value
-            unit
-          }
-          height {
-            value
-            unit
-          }
-      }
-  }
+query GetProducts {
+    getProducts {
+        _id
+        name
+        images {
+            original
+            thumbnail
+        }
+        description
+        notes
+        styles {
+            name
+            price
+            reducedPrice
+            weight {
+                value
+                unit
+            }
+            height {
+                value
+                unit
+            }
+        }
+    }
 }
 `;
 
 export const QUERY_SINGLE_PRODUCT = gql`
-    query GetProduct($id: ID!) {
-        getProduct(_id: $id) {
-            _id
+query GetProduct($id: ID!) {
+    getProduct(_id: $id) {
+        _id
+        name
+        images {
+            original
+            thumbnail
+        }
+        description
+        notes
+        styles {
             name
-            images{
-                original
-                thumbnail
+            price
+            reducedPrice
+            weight {
+                value
+                unit
             }
-            description
-            notes
-            styles {
-                name
-                price
-                reducedPrice
-                weight {
-                  value
-                  unit
-                }
-                height { 
-                  value 
-                  unit
-                }
+            height {
+                value
+                unit
             }
         }
     }
-    `;
+}
+`;
 
-    export const QUERY_USER = gql`
-    query user($username: String!) {
-        users(username: $username) {
-          _id
-          username
-          email
+export const QUERY_USERS = gql`
+    query GetUsers {
+        getUsers {
+            _id
+            username
+            email
         }
-      }
-    `;
-
-    export const QUERY_ME = gql`
-  query me {
-    me {
-      _id
-      username
-      email
     }
-  }
+`;
+
+export const QUERY_ORDERS = gql`
+    query GetOrders {
+        getOrders {
+            _id
+            user
+            date
+            price
+        }
+    }
+`;
+
+export const QUERY_ME = gql`
+    query me {
+        me {
+            _id
+            username
+            email
+        }
+    }
 `;
