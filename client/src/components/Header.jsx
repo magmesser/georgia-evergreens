@@ -6,22 +6,22 @@ import { BsPersonCircle } from 'react-icons/bs';
 function Header() {
     return (
 
-        <header>
+        <header className="">
 
-            <nav>
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/products">Products</Link></li>
-                    <li><Link to="/contact">Contact</Link></li>
-                </ul>
-                <div>
-                    <li><Link to="/profile"><BsPersonCircle /></Link></li>
-                    <li><Link to="/cart">🛍️</Link></li>
-                </div>
+            <nav className="">
+                <ul className="grid grid-cols-8">
+                    <li className="m-5"><Link to="/">Home</Link></li>
+                    <li className="m-5"><Link to="/products">Products</Link></li>
+                    <li className="m-5 col-span-4 "><Link to="/contact">Contact</Link></li>
+                    <li className="m-5"><Link to="/profile"><BsPersonCircle /></Link></li>
+                    <li className="m-5"><Link to="/cart">🛍️</Link></li>
+                    </ul>
             </nav>
 
-            <div>
-                <img src={logo} alt="logo" />
+            <div className="grid grid-cols-3 max-h-60 place-items-center">
+                <div className="col-span-1"></div>
+                <img className="col-span-1 max-w-xs" src={logo} alt="logo" />
+                <div className="col-span-1"></div>
             </div>
         </header>
 
