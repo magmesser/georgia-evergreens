@@ -71,7 +71,7 @@ const Login = (props) => {
               ></input>
             </div>
             <button
-              className="bg-neutral-500 text-white active:bg-neutral-700 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+              className="[background-color:#a7d9d0] [color:#11402F] active:bg-neutral-700 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
               type="submit"
             >
               Log In
@@ -83,7 +83,7 @@ const Login = (props) => {
       <div className="m-5 grid place-items-center">
       <button
         onClick={() => props.onFormSwitch("signup")}
-        className="bg-neutral-500 text-white active:bg-neutral-700 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+        className="[background-color:#79a637] [color:#F2F1E9] active:bg-neutral-700 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
       >
         Don't have an account? Register here.
       </button>
