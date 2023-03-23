@@ -25,6 +25,7 @@ import SingleProduct from "./pages/SingleProduct";
 const httpLink = createHttpLink({
   uri: "http://localhost:3001/graphql",
   credentials: 'same-origin'
+  // uri: '/graphql',
 });
 
 // Construct request middleware that will attach the JWT token to every request as an `authorization` header

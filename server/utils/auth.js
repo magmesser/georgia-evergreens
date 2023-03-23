@@ -1,4 +1,4 @@
-const jwtocken = require('jsonwebtoken');
+const jwtoken = require('jsonwebtoken');
 const config = require('../config/connection');
 // const User = require('../models/user');
 
@@ -26,7 +26,7 @@ module.exports = {
     }
     // If token can be verified, add the decoded user's data to the request so it can be accessed in the resolver
     try {
-      const { data } = jwtocken.verify(token, secret, { maxAge: expiration });
+      const { data } = jwtoken.verify(token, secret, { maxAge: expiration });
       req.user = data;
     } catch {
       // If token is invalid, return an error
@@ -45,7 +45,7 @@ module.exports = {
     // Create a token
     const payload = { email, username, _id };
     // Sign token
-    return jwtocken.sign({ data: payload }, secret, { expiresIn: expiration });
+    return jwtoken.sign({ data: payload }, secret, { expiresIn: expiration });
   }
 
 
