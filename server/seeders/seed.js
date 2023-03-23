@@ -12,7 +12,7 @@ db.once("open", async () => {
         await Product.deleteMany({});
         await User.deleteMany({});
         // Product seeder function
-        productSeeds = makeProducts(10)
+       const productSeeds = makeProducts(10)
         console.log(productSeeds[0])
         console.log(productSeeds[0].images[0])
         console.log(productSeeds[0].styles[0])
