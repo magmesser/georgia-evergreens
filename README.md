@@ -1,34 +1,109 @@
-# georgia-evergreens
+# Georgia Evergreens  ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-Requirements: 
-- ✔️ Use React for the front end.
-- ✔️ Use GraphQL with a Node.js and Express.js server.
-- ✔️ Use MongoDB and the Mongoose ODM for the database.
-- Use queries and mutations for retrieving, adding, updating, and deleting data.
-- Be deployed using Heroku (with data).
-- ✔️ Have a polished UI.
-- ✔️ Be responsive.
-- ✔️ Be interactive (i.e., accept and respond to user input).
-- ✔️ Include authentication (JWT).
-- ✔️ Protect sensitive API key information on the server.
-- ✔️ Have a clean repository that meets quality coding standards (file structure, naming conventions, best practices for class and id naming conventions, indentation, high-quality comments, and so on).
-- Have a high-quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
-- Finally, you must add your project to the portfolio that you created in Module 20.
-- Project Presentation 
+  ## Description
+
+  A collaborative MERN-stack single-page application, you’ll combine a scalable MongoDB back end, a GraphQL API, and an Express.js and Node.js server with a React front end, implementing user authentication with JWT to build a user-focused platform
+
+  ## Concept
+
+  Using a real world Customer to create an updated site with a streamlined, user, and mobile-forward friendly approach. While creating a solid front to end e-commerce experience. We upgraded the clients site through our implementation and enhanced the checkout experience with the integration of [Stripe](https://stripe.com/).
+
+  
+  ## Table of Contents
+  
+  - [Installation](#installation)
+  - [Contributing](#contributing)
+  - [Tests](#tests)
+  - [License](#license)
+  - [Team](#team)
+  - [Links](#links)
+  - [Images](#images)
+  
+  ## Installation
+
+  You will need to import/install the following for this app to run along with the below dependencies:
+  React, Apollo server, GraphQL, Node and Express servers, MongoDB, Mongoose ODM for the database, and deployed on Heroku.
+  
+  ### Dependencies
+```json
+
+  "dependencies": {
+    "@apollo/client": "^3.5.8",
+    "@heroicons/react": "^2.0.16",
+    "@material-tailwind/react": "^1.4.2",
+    "graphql": "^15.4.0",
+    "jwt-decode": "^3.1.2",
+    "react": "^18.2.0",
+    "react-client": "^1.0.1",
+    "react-dom": "^18.2.0",
+    "react-easy-swipe": "^0.0.23",
+    "react-icons": "^4.8.0",
+    "react-router-dom": "^6.2.1",
+    "vite": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@vitejs/plugin-react": "^3.1.0",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.7",
+    "vite": "^4.1.0"
+  },
+  ```
+
+  ## Contributing
+
+  Contributors will need to follow the following guidelines: 
+
+   To cotribute to this project please reach out to the Georgia Evergreens Dev Team. Contact info below.
+
+  ## Tests
+
+   Run the following in the CLI to test the application
+   
+   in the CLI run
+   
+    `npm run develop`
+
+   ## License
+
+  This application is covered under the MIT license.  
+  
+   ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
+   ## Links
+
+   [Georgia Evergreens GitHub](https://github.com/magmesser/georgia-evergreens)  
+   [Georgia Evergreens Site]()  
+   [Georgia Evergreens Presentation](https://www.canva.com/design/DAFd-ZusWGM/OdWZNNmesvYQDNnJA5wSAA/view?utm_content=DAFd-ZusWGM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
+   ## Images
+
+   `Coming Soon!`
 
 
-Suggestions:
-✔️ CSS Styling
-Instead of using a CSS library like Bootstrap, consider one of the following suggestions:
-- Explore the concept of CSS-in-JS, which abstracts CSS to the component level, using JavaScript to describe styles in a declarative and maintainable way. Some popular libraries include styled-components and Emotion.
-- Try using a component library, such as Semantic UI, Chakra UI, or Ant Design.
-- Create all the CSS for your application just using CSS.
+   ## Team
 
-Payment Platform
-- Consider integrating the Stripe payment platform. Even if you don’t create an e-commerce application, you could set up your site to accept charitable donations.
+   For additional quesitons please contact any member of the development team.
 
-Bonus
-Although this is not a requirement for your project, try to also implement functionality to meet the minimum requirements of a PWA:
-- Uses a web manifest.
-- Uses a service worker for offline functionality.
-- Is installable.
+   Bryan Quero 🎮  
+   [GitHub](https://github.com/Bryan3D)  
+   [Email](mailto:bryanq2008@live.com?subject=[GitHub]%20Georgia%20Evergreens%20Question)
+
+   Cherry Viens 🍒  
+   [GitHub](https://github.com/CherryElla)  
+   [Email](mailto:Cherieella@icloud.com?subject=[GitHub]%20Georgia%20Evergreens%20Question)
+
+   Eliot Crandall 🍎  
+   [GitHub](https://github.com/ejc10d)  
+   [Email](mailto:eliotjay313@gmail.com?subject=[GitHub]%20Georgia%20Evergreens%20Question)
+
+   Lian Perez 💕🍪  
+   [GitHub](https://github.com/laps22)  
+   [Email](mailto:lianaurora@gmail.com?subject=[GitHub]%20Georgia%20Evergreens%20Question)
+
+   Maggie Messer 🧝‍♀️  
+   [GitHub](https://github.com/magmesser)  
+   [Email](mailto:magmesser@gmail.com?subject=[GitHub]%20Georgia%20Evergreens%20Question)
+   
