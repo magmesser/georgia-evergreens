@@ -16,6 +16,8 @@
   - [Tests](#tests)
   - [License](#license)
   - [Team](#team)
+  - [Links](#links)
+  - [Images](#images)
   
   ## Installation
 
@@ -69,6 +71,17 @@
   This application is covered under the MIT license.  
   
    ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
+   ## Links
+
+   [Georgia Evergreens GitHub](https://github.com/magmesser/georgia-evergreens)  
+   [Georgia Evergreens Site]()  
+   [Georgia Evergreens Presentation](https://www.canva.com/design/DAFd-ZusWGM/OdWZNNmesvYQDNnJA5wSAA/view?utm_content=DAFd-ZusWGM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
+   ## Images
+
+   `Coming Soon!`
+
 
    ## Team
 
