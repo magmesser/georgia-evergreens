@@ -5,31 +5,31 @@ import { ImInstagram } from "react-icons/im";
 
 const Footer = () => {
   return (
-    <footer className="rounded-lg [background-color:#F2F1E9]  [color:#11402F]">
+    <footer className="mt-auto [background-color:#F2F1E9]  [color:#11402F]">
       <div className="w-full mx-auto container md:p-6 p-4 md:flex md:items-center md:justify-between">
         {/* footer links on page */}
         <ul className="flex flex-wrap items-center mt-3  sm:mt-0">
-          <li className="mr-4 hover:text-lime-500 md:mr-6">
+          <li className="mr-4 hover:text-lime-500 duration-200 md:mr-6">
             <Link to="/">
               <h3>Home</h3>
             </Link>
           </li>
-          <li className="mr-4 hover:text-lime-500 md:mr-6">
+          <li className="mr-4 hover:text-lime-500 duration-200 md:mr-6">
             <Link to="/products">
               <h3>Products</h3>
             </Link>
           </li>
-          <li className="mr-4 hover:text-lime-500 md:mr-6">
+          <li className="mr-4 hover:text-lime-500 duration-200 md:mr-6">
             <Link to="/contact">
               <h3>Contact</h3>
             </Link>
           </li>
-          <li className="mr-4 hover:text-lime-500 md:mr-6">
+          <li className="mr-4 hover:text-lime-500 duration-200 md:mr-6">
             <Link to="/profile">
               <h3>Profile</h3>
             </Link>
           </li>
-          <li className="mr-4 hover:text-lime-500 md:mr-6">
+          <li className="mr-4 hover:text-lime-500 duration-200 md:mr-6">
             <Link to="/cart">
               <h3>Cart</h3>
             </Link>
@@ -40,7 +40,7 @@ const Footer = () => {
         <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
           {/* Facebook */}
           <a
-          className="hover:text-lime-500"
+          className="hover:text-lime-500 duration-200"
             href="https://www.facebook.com/georgiaevergreens/"
             target="_blank"
             rel="noreferrer"
@@ -48,7 +48,7 @@ const Footer = () => {
             <FaFacebookF />
           </a>
           {/* Instagram */}
-          <a className="hover:text-lime-500" href="https://www.instagram.com/americanevergreens" target="_blank" rel="noreferrer">
+          <a className="hover:text-lime-500 duration-200" href="https://www.instagram.com/americanevergreens" target="_blank" rel="noreferrer">
             <ImInstagram />
           </a>
         </div>

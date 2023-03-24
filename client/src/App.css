@@ -1,14 +1,12 @@
-
-
 nav {
   background-color: #CF9A40;
-  height: 50px;
+  height: 60px;
 }
 
 nav ul {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding-top: 0;
 }
 
 nav li {
