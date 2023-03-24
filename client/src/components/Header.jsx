@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/imgs/dev/gelogo.png";
 import { BsPersonCircle, BsCartFill } from "react-icons/bs";
+import Cart from "./Cart";
 
 function Header() {
   return (
@@ -29,9 +30,7 @@ function Header() {
             </Link>
           </li>
           <li className="m-5 mr-4 md:mr-6 float-right">
-            <Link className=" hover:text-gray-800 duration-200" to="/cart">
-              <BsCartFill className="text-2xl"/>
-            </Link>
+            <Cart />
           </li>
         </ul>
       </nav>
