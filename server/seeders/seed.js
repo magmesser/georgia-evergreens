@@ -11,6 +11,7 @@ db.once("open", async () => {
     try {
         await Product.deleteMany({});
         await User.deleteMany({});
+
         // Product seeder function
        const productSeeds = makeProducts(10)
         console.log(productSeeds[0])

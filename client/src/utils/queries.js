@@ -1,65 +1,88 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const QUERY_PRODUCTS = gql`
-    query getProducts {
-        products {
-            _id
+query GetProducts {
+    getProducts {
+        _id
+        name
+        images {
+            original
+            thumbnail
+        }
+        description
+        notes
+        styles {
             name
-            images{
-                original
-                thumbnail
+            price
+            reducedPrice
+            weight {
+                value
+                unit
             }
-            description
-            notes
-            styles {
-                name
-                price
-                reducedPrice
-                weight
-                height
+            height {
+                value
+                unit
             }
+        }
+    }
+}
+`;
+
+export const QUERY_SINGLE_PRODUCT = gql`
+query GetProduct($id: ID!) {
+    getProduct(_id: $id) {
+        _id
+        name
+        images {
+            original
+            thumbnail
+        }
+        description
+        notes
+        styles {
+            name
+            price
+            reducedPrice
+            weight {
+                value
+                unit
+            }
+            height {
+                value
+                unit
+            }
+        }
+    }
+}
+`;
+
+export const QUERY_USERS = gql`
+    query GetUsers {
+        getUsers {
+            _id
+            username
+            email
         }
     }
 `;
 
-export const QUERY_SINGLE_PRODUCT = gql`
-    query getSingleProduct($productId: ID!) {
-        products(productId: $productId) {
+export const QUERY_ORDERS = gql`
+    query GetOrders {
+        getOrders {
             _id
-            name
-            images{
-                original
-                thumbnail
-            }
-            description
-            notes
-            styles {
-                name
-                price
-                reducedPrice
-                weight
-                height
-            }
+            user
+            date
+            price
         }
     }
-    `;
+`;
 
-    export const QUERY_USER = gql`
-    query user($username: String!) {
-        users(username: $username) {
-          _id
-          username
-          email
+export const QUERY_ME = gql`
+    query me {
+        me {
+            _id
+            username
+            email
         }
-      }
-    `;
-
-    export const QUERY_ME = gql`
-  query me {
-    me {
-      _id
-      username
-      email
     }
-  }
 `;

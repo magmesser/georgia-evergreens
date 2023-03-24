@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/imgs/dev/gelogo.png";
-import { BsPersonCircle, BsCartFill } from "react-icons/bs";
+import logo from "../assets/imgs/gelogo.png";
+import { BsPersonCircle, BsCartFill } from 'react-icons/bs';
+
 
 function Header() {
   return (

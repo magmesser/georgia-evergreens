@@ -5,8 +5,8 @@ const PRODUCT_NAMES = [
     "Oak Leaf Holly",
     "Nellie Steven's Holly",
 ];
-const IMAGES = ["./src/assets/imgs/dev/emerald5.png", "./src/assets/imgs/dev/giants15.png"];
-const THUMBNAILS = ["./src/assets/imgs/dev/em.png"];
+const IMAGES = ["imgs/dev/emerald5.png", "imgs/dev/giants15.png"];
+const THUMBNAILS = ["imgs/dev/placeholder.jpg"];
 const DESCRIPTIONS = [
     "One of the fastest-growing options for fantastic coverage. Because of its 50-foot mature height and quick growth rate, it is an ideal choice for those wanting more immediate coverage. It has feathery-like soft foliage and will grow wonderfully dense and tall. Not only is this Cypress drought tolerant, but it is also tolerant to salt air and polluted areas. ",
     "Resistant to disease and fungus, but it is also resistant to deer, making it the ideal screen for rural homes. And with its rich green foliage, whether its pruned, topped, or left alone, will grow into a beautiful and dense privacy barrier or divider.",
