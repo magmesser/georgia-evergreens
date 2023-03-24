@@ -6,14 +6,13 @@ import { QUERY_ME } from '../utils/queries';
 
 import Auth from '../utils/auth';
 
-const ProfileSingle = () => {
+const OrderHistory = () => {
   const { username: userParam } = useParams();
 
-  const { loading, data } = useQuery(QUERY_ME, {
-    variables: { username: userParam },
-  });
+  const { loading, data } = useQuery(QUERY_ME);
 
   const user = data?.me || data?.user || {};
+  console.log(data?.me)
   // navigate to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
     return <Navigate to="/profile" />;
@@ -23,7 +22,7 @@ const ProfileSingle = () => {
     return <div>Loading...</div>;
   }
 
-  if (!user?.username) {
+  if (!Auth.loggedIn()) {
     return (
       <h4 className="text-center m-3">
         You need to be logged in to see this. Use the navigation links above to
@@ -49,4 +48,4 @@ const ProfileSingle = () => {
   );
 };
 
-export default ProfileSingle;
+export default OrderHistory;

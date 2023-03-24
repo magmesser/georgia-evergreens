@@ -12,7 +12,7 @@ function Images({ images }) {
             <>
                 <img
                     alt="tree"
-                    className="w-lg m-5"
+                    className="w-screen object-cover rounded-md shadow-lg"
                     src={`/${images[0].original}`}
                 />
             </>
@@ -26,16 +26,9 @@ function Images({ images }) {
     }
 }
 
-// Function that gets a product from the database by its id
-// function getProduct (id) {
-
-//    return data.product
-// }
-
 function SingleProduct() {
-    // const { name, _id, description, images, notes, styles } = item;
     const { id } = useParams();
-    const [product, setProduct] = React.useState([])
+    const [product, setProduct] = React.useState([]);
     const [state, dispatch] = useStoreContext();
     const { cart } = state;
     // const loading = true;
@@ -96,64 +89,57 @@ function SingleProduct() {
     // console.log(data);
     return (
         <>
-            <div className="">
-                <h2 className="text-3xl m-5 col-span-4 text-left">
+            <div className="pb-12 mb-40 mt-10 [background-color:#A7D9D0]">
+                <h2 className="text-3xl m-5 col-span-4 text-center [color:#064025]">
                     {product.name}
                 </h2>
-
-                {/* TODO: REMOVE Testing cart */}
-                <p>{cart.length}</p>
-                {cart.map((i) => {
-                    return <>{i.productQuantity}</>;
-                })}
-                {/* TODO: REMOVE Testing cart */}
-
-                <div className="flex justify-left">
-                    <div className="max-w-md">
+                <div className="flex flex-col md:flex-row justify-center items-center">
+                    <div className=" rounded-md p-3 m-5">
                         <Images images={product.images} />
                     </div>
-                    <div className="m-5 w-screen">
-                        <form className="m-5 text-left">
-                            <div className="radio">
-                                <input
-                                    type="radio"
-                                    value="small"
-                                    defaultChecked
-                                />
-                                <label className="ml-4">Small</label>
-                            </div>
-                            <div className="radio">
-                                <input type="radio" value="medium" />
-                                <label className="ml-4">Medium</label>
-                            </div>
-                            <div className="radio">
-                                <input type="radio" value="large" />
-                                <label className="ml-4">Large</label>
-                            </div>
-                        </form>
-
-                        <div className="container">
-                            <div className="">
-                                <div className="card">
-                                    <div className="card-body">
-                                        <div className="m-5">
-                                            {product.description}
-                                        </div>
-                                        <div className="m-5">
-                                            {product.notes}
-                                        </div>
-                                    </div>
+                    <div className=" rounded-md p-3 m-5">
+                        <Images images={product.images} />
+                    </div>
+                    <div className="m-5">
+                        <div className="card">
+                            <div className="card-body">
+                                <div className=" [color:#064025]">
+                                    {product.description}
+                                </div>
+                                <div className="m-5 [color:#064025]">
+                                    {product.notes}
                                 </div>
                             </div>
                         </div>
-
-                        <button
-                            onClick={addToCart}
-                            className="bg-blue-500 text-white active:bg-blue-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 m-5 ease-linear transition-all duration-150"
-                            type="submit"
-                        >
-                            Add to Cart
-                        </button>
+                        <div className="flex justify-center items-center flex-col [color:#064025]">
+                            <form className="m-5 text-left flex flex-wrap gap-4">
+                                <div className="radio">
+                                    <input
+                                        type="radio"
+                                        value="small"
+                                        defaultChecked
+                                    />
+                                    <label className="ml-4 ">{product.styles[0].name}</label>
+                                </div>
+                                <div className="radio">
+                                    <input type="radio" value="medium" />
+                                    <label className="ml-4">{product.styles[1].name}</label>
+                                </div>
+                                <div className="radio">
+                                    <input type="radio" value="large" />
+                                    <label className="ml-4">{product.styles[2].name}</label>
+                                </div>
+                            </form>
+                            <button
+                                onClick={addToCart}
+                                className=" [color:#a7d9d0] [background-color:#064025] font-bold
+                            uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg 
+                            outline-none focus:outline-no"
+                                type="submit"
+                            >
+                                Add to Cart
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -162,3 +148,16 @@ function SingleProduct() {
 }
 
 export default SingleProduct;
+
+{
+    /* TODO: REMOVE Testing cart */
+}
+{
+    /* <p>{cart.length}</p>
+                {cart.map((i) => {
+                    return <>{i.productQuantity}</>;
+                })} */
+}
+{
+    /* TODO: REMOVE Testing cart */
+}

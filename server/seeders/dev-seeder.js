@@ -13,6 +13,7 @@ const DESCRIPTIONS = [
     "A beautifully bright, lush green evergreen, perfect for smaller gardens or narrow areas. At maturity it will reach only around 12 to 15 feet high, and around 3 to 4 feet wide, giving it a distinctive columnar shape. Whether you are looking to hedge, accent, or create a foundation, this low-maintenance, elegant tree is a perfect choice.",
     "Low maintenance, rich green evergreen shrub. And with its natural pyramidal form and mat thorny leaves, it makes for a beautiful and formal hedge. It is adaptable to most soil types, growing around 2 feet per year, developing into a magnificent privacy screen.",
 ];
+const NOTES = ["- Fast grower", "- All soil types", "- Partial to Full sun"]
 const AMOUNT_UNITS = ["lbs", "cm", "ft", "kg"];
 const STYLE_NAMES = ["small", "medium", "large"];
 
@@ -74,7 +75,7 @@ function makeProduct(nImages = 1, notes = "") {
         name: randomChoice(PRODUCT_NAMES),
         description: randomChoice(DESCRIPTIONS),
         images: makeMultiple(nImages, newImage),
-        notes: notes,
+        notes: randomChoice(NOTES),
         styles: STYLE_NAMES.map((n) => newStyle(n)),
     };
 }
