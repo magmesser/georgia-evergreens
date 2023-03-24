@@ -19,7 +19,7 @@ import ContactForm from "./components/Contact";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
-import SingleProduct from "./pages/SingleProduct";
+
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -61,7 +61,7 @@ function App() {
                             <Route path="/productdetails/:id" element={<SingleProduct />}/>
                             <Route path="/contact" element={<ContactForm />} />
                             <Route path="/profile" element={<Profile />} />
-                            {/* <Route path="/cart" element={<Cart />} /> */}
+                            {/* <Route path="/cart" element={<MyCart />} /> */}
                         </Routes>
                         <Footer />
                     </StoreProvider>
