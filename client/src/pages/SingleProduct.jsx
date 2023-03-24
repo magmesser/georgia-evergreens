@@ -12,7 +12,7 @@ function Images({ images }) {
             <>
                 <img
                     alt="tree"
-                    className="w-lg m-5"
+                    className="w-screen rounded-md shadow-md shadow-black"
                     src={`/${images[0].original}`}
                 />
             </>
@@ -96,8 +96,8 @@ function SingleProduct() {
     // console.log(data);
     return (
         <>
-            <div className="">
-                <h2 className="text-3xl m-5 col-span-4 text-left">
+            <div className="pb-10">
+                <h2 className="text-3xl m-5 col-span-4 text-center">
                     {product.name}
                 </h2>
 
@@ -108,12 +108,26 @@ function SingleProduct() {
                 })}
                 {/* TODO: REMOVE Testing cart */}
 
-                <div className="flex justify-left">
-                    <div className="max-w-md">
+                <div className="flex">
+                    <div className="   rounded-md p-3  max-w-xl  justify-center">
                         <Images images={product.images} />
                     </div>
                     <div className="m-5 w-screen">
-                        <form className="m-5 text-left">
+                        <div className="container">
+                            <div className="">
+                                <div className="card">
+                                    <div className="card-body">
+                                        <div className="m-5">
+                                            {product.description}
+                                        </div>
+                                        <div className="m-5">
+                                            {product.notes}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <form className="m-5 text-left flex flex-wrap">
                             <div className="radio">
                                 <input
                                     type="radio"
@@ -131,25 +145,9 @@ function SingleProduct() {
                                 <label className="ml-4">Large</label>
                             </div>
                         </form>
-
-                        <div className="container">
-                            <div className="">
-                                <div className="card">
-                                    <div className="card-body">
-                                        <div className="m-5">
-                                            {product.description}
-                                        </div>
-                                        <div className="m-5">
-                                            {product.notes}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                         <button
                             onClick={addToCart}
-                            className="bg-blue-500 text-white active:bg-blue-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 m-5 ease-linear transition-all duration-150"
+                            className=" [color:#a7d9d0] active:bg-blue-600 [background-color:#a7d9d0] font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-no"
                             type="submit"
                         >
                             Add to Cart
@@ -160,5 +158,9 @@ function SingleProduct() {
         </>
     );
 }
+
+// {/* <Button className="[background-color:#064025] px-4 py-2 rounded-lg">
+//                  <Link to={`/productdetails/${id}`}>Product Details</Link> 
+//                 </Button> */}
 
 export default SingleProduct;
