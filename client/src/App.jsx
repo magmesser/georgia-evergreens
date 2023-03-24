@@ -21,10 +21,11 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import OrderHistory from "./components/OrderHistory";
 
-
+// const PORT = process.env.PORT || 5000;
+// console.log(PORT);
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
-    uri: "http://localhost:3001/graphql",
+    uri: `http://localhost:3001/graphql`,
     // credentials: 'same-origin'
     // uri: "/graphql",
 });
