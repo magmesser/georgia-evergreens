@@ -43,10 +43,23 @@ const typeDefs = gql`
         price: Float
     }
 
-    type Auth {
-        token: ID!
-        user: User
-    }
+  type Auth {
+    token: ID!
+    user: User
+  }
+
+  type Checkout {
+    session: ID
+  }
+  
+  type Query {
+    users: [User]
+    products: [Product]
+    orders: [Order]
+    me: User
+    checkout(products: [ID]!): Checkout
+  }
+
 
     type Query {
         getUsers: [User]

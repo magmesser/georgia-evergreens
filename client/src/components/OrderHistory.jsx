@@ -6,7 +6,7 @@ import { QUERY_ME } from '../utils/queries';
 
 import Auth from '../utils/auth';
 
-const ProfileSingle = () => {
+const OrderHistory = () => {
   const { username: userParam } = useParams();
 
   const { loading, data } = useQuery(QUERY_ME);
@@ -48,4 +48,4 @@ const ProfileSingle = () => {
   );
 };
 
-export default ProfileSingle;
+export default OrderHistory;
