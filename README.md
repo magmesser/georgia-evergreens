@@ -6,7 +6,7 @@
 
   ## Concept
 
-  Using a real world Customer to create and updated site with a streamlined, user, and mobile-forward friendly approach. While creating a solid front to end e-commerce experience. We upgraded the clients site through our implementation and enhanced the checkout experience with the integration of [Stripe](https://stripe.com/).
+  Using a real world Customer to create an updated site with a streamlined, user, and mobile-forward friendly approach. While creating a solid front to end e-commerce experience. We upgraded the clients site through our implementation and enhanced the checkout experience with the integration of [Stripe](https://stripe.com/).
 
   
   ## Table of Contents
