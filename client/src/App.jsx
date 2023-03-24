@@ -19,12 +19,13 @@ import ContactForm from "./components/Contact";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
-import SingleProduct from "./components/SingleProduct";
-// import MyCart from "./pages/Cart";
+
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: "http://localhost:3001/graphql",
+  credentials: 'same-origin'
+  // uri: '/graphql',
 });
 
 // Construct request middleware that will attach the JWT token to every request as an `authorization` header
@@ -42,13 +43,14 @@ const authLink = setContext((_, { headers }) => {
 
 const client = new ApolloClient({
   // Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
-  link: authLink.concat(httpLink),
+  // link: authLink.concat(httpLink),
+  link: httpLink,
   cache: new InMemoryCache(),
 });
 
 function App() {
     return (
-        <body className="flex flex-col min-h-screen">
+        <main className="flex flex-col min-h-screen">
             <ApolloProvider client={client}>
                 <Router>
                     <StoreProvider>
@@ -65,7 +67,7 @@ function App() {
                     </StoreProvider>
                 </Router>
             </ApolloProvider>
-        </body>
+        </main>
     );
 }
 

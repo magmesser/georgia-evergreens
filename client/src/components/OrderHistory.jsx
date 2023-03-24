@@ -2,14 +2,14 @@ import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
-import { QUERY_USER, QUERY_ME } from '../utils/queries';
+import { QUERY_ME } from '../utils/queries';
 
 import Auth from '../utils/auth';
 
-const ProfileSingle = () => {
+const OrderHistory = () => {
   const { username: userParam } = useParams();
 
-  const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
+  const { loading, data } = useQuery(QUERY_ME, {
     variables: { username: userParam },
   });
 
@@ -23,7 +23,7 @@ const ProfileSingle = () => {
     return <div>Loading...</div>;
   }
 
-  if (!user?.username) {
+  if (!Auth.loggedIn()) {
     return (
       <h4 className="text-center m-3">
         You need to be logged in to see this. Use the navigation links above to
@@ -49,4 +49,4 @@ const ProfileSingle = () => {
   );
 };
 
-export default ProfileSingle;
+export default OrderHistory;
