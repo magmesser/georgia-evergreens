@@ -9,11 +9,10 @@ import Auth from '../utils/auth';
 const OrderHistory = () => {
   const { username: userParam } = useParams();
 
-  const { loading, data } = useQuery(QUERY_ME, {
-    variables: { username: userParam },
-  });
+  const { loading, data } = useQuery(QUERY_ME);
 
   const user = data?.me || data?.user || {};
+  console.log(data?.me)
   // navigate to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
     return <Navigate to="/profile" />;
