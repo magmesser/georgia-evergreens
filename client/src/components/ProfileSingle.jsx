@@ -23,7 +23,7 @@ const ProfileSingle = () => {
     return <div>Loading...</div>;
   }
 
-  if (!user?.username) {
+  if (!Auth.loggedIn()) {
     return (
       <h4 className="text-center m-3">
         You need to be logged in to see this. Use the navigation links above to
