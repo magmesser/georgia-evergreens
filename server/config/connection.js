@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 mongoose.set('strictQuery', true)
 // Connect to the Mongo DB
 mongoose.connect(
-  // process.env.MONGODB_URI || 'mongodb://localhost:27017/greentreesDB',
-  "mongodb+srv://student-admin:ucfbootcamp@greentreesdb.lzfnfko.mongodb.net/?retryWrites=true&w=majority",
+  process.env.MONGODB_URI || 'mongodb://localhost:27017/greentreesDB',
+  // "mongodb+srv://student-admin:ucfbootcamp@greentreesdb.lzfnfko.mongodb.net/?retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
