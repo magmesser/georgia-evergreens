@@ -85,8 +85,6 @@ function SingleProduct() {
         );
     }
 
-    // return <p>{product.name}</p>
-    // console.log(data);
     return (
         <>
             <div className="pb-12 mb-40 mt-10 [background-color:#A7D9D0]">

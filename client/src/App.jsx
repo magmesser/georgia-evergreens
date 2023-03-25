@@ -19,6 +19,7 @@ import ContactForm from "./components/Contact";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
+import SingleProduct from './pages/SingleProduct'
 import OrderHistory from "./components/OrderHistory";
 
 // const PORT = process.env.PORT || 5000;
@@ -62,8 +63,8 @@ function App() {
                         <Routes>
                             <Route path="/" element={<Home />} />
                             <Route path="/products" element={<Products />} />
-                            {/* <Route path="/productdetails/:id" element={<SingleProduct />}/> */}
-                            <Route path="/productdetails/:id" element={<OrderHistory />}/>
+                            <Route path="/productdetails/:id" element={<SingleProduct />}/>
+                            <Route path="/orderhistory" element={<OrderHistory />}/>
                             <Route path="/contact" element={<ContactForm />} />
                             <Route path="/profile" element={<Profile />} />
                             {/* <Route path="/cart" element={<MyCart />} /> */}
