@@ -115,16 +115,17 @@ function SingleProduct() {
                                     <input
                                         type="radio"
                                         value="small"
+                                        name="size"
                                         defaultChecked
                                     />
                                     <label className="ml-4 ">{product.styles[0].name}</label>
                                 </div>
                                 <div className="radio">
-                                    <input type="radio" value="medium" />
+                                    <input type="radio" value="medium" name="size" />
                                     <label className="ml-4">{product.styles[1].name}</label>
                                 </div>
                                 <div className="radio">
-                                    <input type="radio" value="large" />
+                                    <input type="radio" value="large" name="size"/>
                                     <label className="ml-4">{product.styles[2].name}</label>
                                 </div>
                             </form>

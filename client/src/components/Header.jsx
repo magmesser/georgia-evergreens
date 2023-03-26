@@ -10,7 +10,7 @@ function Header() {
   return (
     <header className="">
       <nav className="">
-        <ul className="pb-4 flex flex-wrap items-center mt-3  mt-auto flow-root">
+        <ul className="pb-4 flex-wrap items-center mt-auto flow-root">
           <li className="m-5 mr-4 md:mr-6 float-left">
             <Link className=" hover:text-gray-800 duration-200" to="/">
               Home
