@@ -55,7 +55,8 @@ function SingleProduct() {
         // then iterate through the cart to see if a CartItem has the same product id and style string
         const existingCartItem = cart.find(
             (_item) =>
-                _item.product._id === id && selectedStyle.name === _item.style.name
+                _item.product._id === id &&
+                selectedStyle.name === _item.style.name
         );
 
         if (existingCartItem) {
@@ -91,6 +92,17 @@ function SingleProduct() {
             });
         }
     }
+
+    function handleInput(event) {
+        if (event.target.value.length === 0) {
+            setQuantity(1)
+            return
+        }
+        const result = event.target.value.replace(/\D/g, "");
+        if (result) {
+            setQuantity(result);
+        } 
+    }
     // Styles renderer
     function StyleFeats({ style }) {
         if (style) {
@@ -102,12 +114,11 @@ function SingleProduct() {
 
                     <div className="">
                         <input
-                            type="number"
-                            value={`${quantity ? quantity : ""}`}
-                            onChange={(v) => {
-                                v.preventDefault();
-                                setQuantity(parseInt(v.target.value));
-                            }}
+                            type="text"
+                            placeholder="Amount"
+                            value={quantity ? `${quantity}` : ""}
+                            // value={`${quantity ? quantity : ""}`}
+                            onChange={handleInput}
                         ></input>
                     </div>
                     {/* {style.reducedPrice}
@@ -201,11 +212,12 @@ function SingleProduct() {
                                         );
                                     })}
                             </div>
-                            <StyleFeats
-                                style={product.styles.find(
+                            {StyleFeats({
+                                style: product.styles.find(
                                     (s) => s.name === selectedStyleName
-                                )}
-                            />
+                                ),
+                            })}
+
                             <button
                                 onClick={() => {
                                     addToCart(quantity);
@@ -219,7 +231,7 @@ function SingleProduct() {
                             </button>
                             Types: {cart.length}
                             <br />
-                            Total Amount:{" "}
+                            Total Amount
                             {cart.reduce((total, current) => {
                                 return total + current.quantity;
                             }, 0)}

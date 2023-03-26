@@ -31,7 +31,7 @@ export const productReducer = (state, action) => {
                 cartOpen: true,
                 cart: state.cart.map((cartItem) => {
                     if (
-                        action.cartItem.product._Id === cartItem.product._id &&
+                        action.cartItem.product._id === cartItem.product._id &&
                         action.cartItem.style.name === cartItem.style.name
                     ) {
                         cartItem.quantity = action.cartItem.quantity;
@@ -71,6 +71,11 @@ export const productReducer = (state, action) => {
         // Return the state as is in the event that the `action.type` passed to our reducer was not accounted for by the developers
         // This saves us from a crash.
         default:
-            return state;
+            return state
+            
     }
+
+    // If code reaches here, state has changed and we want to update local storage
+    // localStorage.setItem('georgia-evergreens-state', newState)
+    // return newState
 };
