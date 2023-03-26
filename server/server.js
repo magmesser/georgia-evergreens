@@ -21,7 +21,7 @@ const server = new ApolloServer({
 // This is your test secret API key.
 const stripe = require('stripe')('sk_test_51Mm4DBEt2stpP8jUkVt3BWfeAUQTmSfRnLaNexpGEh0gWXKLcyNlu5D5gYA7nrQPMwUq5yFxpx7RYzOEB9cFBFNo00rpyfRcLa');
 
-const YOUR_DOMAIN = 'http://localhost:3001';
+const YOUR_DOMAIN = 'https://georgia-evergreens.herokuapp.com/” || ‘https://localhost:3001’;';
 
 app.post('/create-checkout-session', async (req, res) => {
   const session = await stripe.checkout.sessions.create({
