@@ -104,7 +104,7 @@ function SingleProduct() {
                     <div className="">
                         <input
                             type="number"
-                            value={quantity}
+                            value={`${quantity ? quantity : ""}`}
                             onChange={(v) => {
                                 v.preventDefault();
                                 setQuantity(parseInt(v.target.value));
