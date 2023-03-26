@@ -24,15 +24,16 @@ function Reviews() {
     return (
         <div className="mt-20 mb-20 relative  [color:#064025]">
             <Carousel
-                draggable={false}
+                swipeable ={true}
+                draggable={true}
                 showDots={true}
                 responsive={responsive}
                 ssr={true} // means to render carousel on server-side.
                 infinite={true}
                 autoPlay={true}
-                autoPlaySpeed={3000}
+                autoPlaySpeed={2500}
                 keyBoardControl={true}
-                customTransition="all .5"
+                // customTransition="all .5"
                 transitionDuration={500}
                 containerClass="carousel-container"
                 //   removeArrowOnDeviceType={["tablet", "mobile"]}
