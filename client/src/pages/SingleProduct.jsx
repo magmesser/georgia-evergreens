@@ -60,7 +60,7 @@ function SingleProduct() {
         );
 
         if (existingCartItem) {
-
+            console.log("Update cart");
             let quantity = 0;
             if (amount) {
                 quantity =
@@ -68,7 +68,6 @@ function SingleProduct() {
             } else {
                 quantity = parseInt(existingCartItem.quantity) + 1;
             }
-            console.log("Update cart");
             dispatch({
                 type: UPDATE_CART_QUANTITY,
                 cartItem: {
@@ -93,6 +92,17 @@ function SingleProduct() {
             });
         }
     }
+
+    function handleInput(event) {
+        if (event.target.value.length === 0) {
+            setQuantity(1)
+            return
+        }
+        const result = event.target.value.replace(/\D/g, "");
+        if (result) {
+            setQuantity(result);
+        } 
+    }
     // Styles renderer
     function StyleFeats({ style }) {
         if (style) {
@@ -104,12 +114,11 @@ function SingleProduct() {
 
                     <div className="">
                         <input
-                            type="number"
-                            value={`${quantity ? quantity : ""}`}
-                            onChange={(v) => {
-                                v.preventDefault();
-                                setQuantity(parseInt(v.target.value));
-                            }}
+                            type="text"
+                            placeholder="Amount"
+                            value={quantity ? `${quantity}` : ""}
+                            // value={`${quantity ? quantity : ""}`}
+                            onChange={handleInput}
                         ></input>
                     </div>
                     {/* {style.reducedPrice}
@@ -203,11 +212,12 @@ function SingleProduct() {
                                         );
                                     })}
                             </div>
-                            <StyleFeats
-                                style={product.styles.find(
+                            {StyleFeats({
+                                style: product.styles.find(
                                     (s) => s.name === selectedStyleName
-                                )}
-                            />
+                                ),
+                            })}
+
                             <button
                                 onClick={() => {
                                     addToCart(quantity);
