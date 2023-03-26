@@ -3,10 +3,15 @@ import { productReducer } from "./reducers";
 
 const StoreContext = createContext();
 
-// Defining App state 
+// Defining App state
 const initialState = {
-    products: [],
-    cart: [],
+    // Cart items will have a structure --
+    // class CartItem {
+    //     productId: ID
+    //     style: String
+    //     quantity: Int
+    // }
+    cart: [], // an array of CartItem objects
     cartOpen: false,
 };
 
@@ -17,6 +22,6 @@ const StoreProvider = ({ value = [], ...props }) => {
 
 function useStoreContext() {
     return useContext(StoreContext);
-};
+}
 
-export { StoreProvider, useStoreContext, initialState};
+export { StoreProvider, useStoreContext, initialState };

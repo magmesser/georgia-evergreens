@@ -12,22 +12,16 @@ import {
 export const productReducer = (state, action) => {
     switch (action.type) {
         // Returns a copy of state with an update products array. We use the action.products property and spread it's contents into the new array.
-        case UPDATE_PRODUCTS:
-            return {
-                ...state,
-                products: [...action.products],
-            };
-
         case ADD_TO_CART:
             return {
                 ...state,
                 cartOpen: true,
-                cart: [...state.cart, action.product],
+                cart: [...state.cart, action.cartItem],
             };
         case ADD_MULTIPLE_TO_CART:
             return {
                 ...state,
-                cart: [...state.cart, ...action.products],
+                cart: [...state.cart, ...action.cartItems],
             };
         // Returns a copy of state, sets the cartOpen to true and maps through the items in the cart.
         // If the item's `id` matches the `id` that was provided in the action.payload, we update the purchase quantity.
@@ -35,11 +29,14 @@ export const productReducer = (state, action) => {
             return {
                 ...state,
                 cartOpen: true,
-                cart: state.cart.map((product) => {
-                    if (action._id === product._id) {
-                        product.productQuantity = action.productQuantity;
+                cart: state.cart.map((cartItem) => {
+                    if (
+                        action.cartItem.productId === cartItem.productId &&
+                        action.cartItem.style === cartItem.style
+                    ) {
+                        cartItem.quantity = action.cartItem.quantity;
                     }
-                    return product;
+                    return cartItem;
                 }),
             };
 
@@ -77,4 +74,3 @@ export const productReducer = (state, action) => {
             return state;
     }
 };
-
