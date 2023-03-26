@@ -31,7 +31,6 @@ function SingleProduct() {
     let [product, setProduct] = React.useState([]);
     const [selectedStyleName, setSelectedStyleName] = React.useState(0);
     const [quantity, setQuantity] = React.useState(1);
-    // const [styles, setStyles] = React.useState([]);
     const [state, dispatch] = useStoreContext();
     const { cart } = state;
     const { loading, error } = useQuery(QUERY_SINGLE_PRODUCT, {
