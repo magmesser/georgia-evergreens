@@ -55,11 +55,12 @@ function SingleProduct() {
         // then iterate through the cart to see if a CartItem has the same product id and style string
         const existingCartItem = cart.find(
             (_item) =>
-                _item.product._id === id && selectedStyle.name === _item.style.name
+                _item.product._id === id &&
+                selectedStyle.name === _item.style.name
         );
 
         if (existingCartItem) {
-            console.log("Update cart");
+
             let quantity = 0;
             if (amount) {
                 quantity =
@@ -67,6 +68,7 @@ function SingleProduct() {
             } else {
                 quantity = parseInt(existingCartItem.quantity) + 1;
             }
+            console.log("Update cart");
             dispatch({
                 type: UPDATE_CART_QUANTITY,
                 cartItem: {
@@ -219,7 +221,7 @@ function SingleProduct() {
                             </button>
                             Types: {cart.length}
                             <br />
-                            Total Amount:{" "}
+                            Total Amount
                             {cart.reduce((total, current) => {
                                 return total + current.quantity;
                             }, 0)}
