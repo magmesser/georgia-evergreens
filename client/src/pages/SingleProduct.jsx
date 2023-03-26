@@ -28,53 +28,113 @@ function Images({ images }) {
 
 function SingleProduct() {
     const { id } = useParams();
-    const [product, setProduct] = React.useState([]);
+    let [product, setProduct] = React.useState([]);
+    const [selectedStyleName, setSelectedStyleName] = React.useState(0);
+    const [quantity, setQuantity] = React.useState(1);
+    // const [styles, setStyles] = React.useState([]);
     const [state, dispatch] = useStoreContext();
     const { cart } = state;
-    // const loading = true;
     const { loading, error } = useQuery(QUERY_SINGLE_PRODUCT, {
         variables: { id },
         onCompleted: (data) => {
             if (data && data.getProduct) {
                 setProduct(data.getProduct);
+                setSelectedStyleName(data.getProduct.styles[0].name);
             }
         },
     });
 
-    function addToCart() {
+    // Adding product to cart
+    function addToCart(amount) {
         // Checking to see if a particular item is already in cart
-        const itemInCart = cart.find((_item) => _item._id === id);
-        if (itemInCart) {
+
+        // First get the selected style object
+        const selectedStyle = product.styles.find(
+            (s) => s.name === selectedStyleName
+        );
+
+        // then iterate through the cart to see if a CartItem has the same product id and style string
+        const existingCartItem = cart.find(
+            (_item) =>
+                _item.productId === id && selectedStyle.name === _item.style
+        );
+
+        if (existingCartItem) {
             console.log("Update cart");
+            let quantity = 0;
+            if (amount) {
+                quantity =
+                    parseInt(existingCartItem.quantity) + parseInt(amount);
+            } else {
+                quantity = parseInt(existingCartItem.quantity) + 1;
+            }
             dispatch({
                 type: UPDATE_CART_QUANTITY,
-                _id: id,
-                productQuantity: parseInt(itemInCart.productQuantity) + 1,
+                cartItem: {
+                    ...existingCartItem,
+                    quantity: quantity,
+                },
             });
             // If item is not already in the cart add one of item
         } else {
             console.log("add to cart");
+            let quantity = 1;
+            if (amount) {
+                quantity = parseInt(amount);
+            }
             dispatch({
                 type: ADD_TO_CART,
-                product: { ...product, productQuantity: 1 },
+                cartItem: {
+                    productId: id,
+                    style: selectedStyle.name,
+                    quantity: quantity,
+                },
             });
         }
+    }
+    // Styles renderer
+    function StyleFeats({ style }) {
+        if (style) {
+            return (
+                <div className="mb-4">
+                    <div className="text-green text-lg font-bold">
+                        ${style.price}
+                    </div>
+
+                    <div className="">
+                        <input
+                            type="number"
+                            value={quantity}
+                            onChange={(v) => {
+                                v.preventDefault();
+                                setQuantity(parseInt(v.target.value));
+                            }}
+                        ></input>
+                    </div>
+                    {/* {style.reducedPrice}
+                {style.height.value}
+                {style.height.unit}
+                {style.weight.value}
+                {style.weight.unit} */}
+                </div>
+            );
+        }
+        return <></>;
     }
 
     // React.useEffect(() => {
     //     if (product._id) {
-    //         setProduct(product)
+    //         setProduct(product);
+    //         setStyleName(product.styles[0].name);
     //     }
     // }, [product]);
 
     if (loading) {
         return <h2>Loading</h2>;
     }
-
     if (error) {
         return <p>{error}</p>;
     }
-
     if (!product || !product._id) {
         return (
             <>
@@ -110,26 +170,47 @@ function SingleProduct() {
                             </div>
                         </div>
                         <div className="flex justify-center items-center flex-col [color:#064025]">
-                            <form className="m-5 text-left flex flex-wrap gap-4">
-                                <div className="radio">
-                                    <input
-                                        type="radio"
-                                        value="small"
-                                        defaultChecked
-                                    />
-                                    <label className="ml-4 ">{product.styles[0].name}</label>
-                                </div>
-                                <div className="radio">
-                                    <input type="radio" value="medium" />
-                                    <label className="ml-4">{product.styles[1].name}</label>
-                                </div>
-                                <div className="radio">
-                                    <input type="radio" value="large" />
-                                    <label className="ml-4">{product.styles[2].name}</label>
-                                </div>
-                            </form>
+                            <div className="m-5 text-left flex flex-wrap gap-4">
+                                {[]
+                                    .concat(product.styles)
+                                    .sort(
+                                        (a, b) =>
+                                            a.height.value - b.height.value
+                                    )
+                                    .map((style) => {
+                                        return (
+                                            <div
+                                                key={style.name}
+                                                className="radio"
+                                            >
+                                                <button
+                                                    className={`px-4 py-2 rounded ${
+                                                        selectedStyleName ==
+                                                        style.name
+                                                            ? "bg-red-400"
+                                                            : "bg-orange-300 "
+                                                    }`}
+                                                    onClick={() => {
+                                                        setSelectedStyleName(
+                                                            style.name
+                                                        );
+                                                    }}
+                                                >
+                                                    {style.height.value} ft
+                                                </button>
+                                            </div>
+                                        );
+                                    })}
+                            </div>
+                            <StyleFeats
+                                style={product.styles.find(
+                                    (s) => s.name === selectedStyleName
+                                )}
+                            />
                             <button
-                                onClick={addToCart}
+                                onClick={() => {
+                                    addToCart(quantity);
+                                }}
                                 className=" [color:#a7d9d0] [background-color:#064025] font-bold
                             uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg 
                             outline-none focus:outline-no"
@@ -137,6 +218,12 @@ function SingleProduct() {
                             >
                                 Add to Cart
                             </button>
+                            Types: {cart.length}
+                            <br />
+                            Total Amount:{" "}
+                            {cart.reduce((total, current) => {
+                                return total + current.quantity;
+                            }, 0)}
                         </div>
                     </div>
                 </div>
