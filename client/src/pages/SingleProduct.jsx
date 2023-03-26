@@ -55,7 +55,7 @@ function SingleProduct() {
         // then iterate through the cart to see if a CartItem has the same product id and style string
         const existingCartItem = cart.find(
             (_item) =>
-                _item.productId === id && selectedStyle.name === _item.style
+                _item.product._id === id && selectedStyle.name === _item.style.name
         );
 
         if (existingCartItem) {
@@ -84,8 +84,8 @@ function SingleProduct() {
             dispatch({
                 type: ADD_TO_CART,
                 cartItem: {
-                    productId: id,
-                    style: selectedStyle.name,
+                    product: product,
+                    style: selectedStyle,
                     quantity: quantity,
                 },
             });

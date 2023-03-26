@@ -31,8 +31,8 @@ export const productReducer = (state, action) => {
                 cartOpen: true,
                 cart: state.cart.map((cartItem) => {
                     if (
-                        action.cartItem.productId === cartItem.productId &&
-                        action.cartItem.style === cartItem.style
+                        action.cartItem.product._Id === cartItem.product._id &&
+                        action.cartItem.style.name === cartItem.style.name
                     ) {
                         cartItem.quantity = action.cartItem.quantity;
                     }

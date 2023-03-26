@@ -7,8 +7,8 @@ const StoreContext = createContext();
 const initialState = {
     // Cart items will have a structure --
     // class CartItem {
-    //     productId: ID
-    //     style: String
+    //     product: Product
+    //     style: Style
     //     quantity: Int
     // }
     cart: [], // an array of CartItem objects
