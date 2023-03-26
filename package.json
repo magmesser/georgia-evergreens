@@ -6,6 +6,7 @@
   },
   "private": true,
   "dependencies": {
+    "stripe": "^11.16.0"
   },
   "scripts": {
     "heroku-prebuild": "npm run install && npm run build",
