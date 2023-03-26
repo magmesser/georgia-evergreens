@@ -75,7 +75,7 @@
    ## Links
 
    [Georgia Evergreens GitHub](https://github.com/magmesser/georgia-evergreens)  
-   [Georgia Evergreens Site]()  
+   [Georgia Evergreens Site](https://georgia-evergreens.herokuapp.com/)  
    [Georgia Evergreens Presentation](https://www.canva.com/design/DAFd-ZusWGM/OdWZNNmesvYQDNnJA5wSAA/view?utm_content=DAFd-ZusWGM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
    ## Images
