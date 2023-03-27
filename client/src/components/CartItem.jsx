@@ -1,19 +1,18 @@
 import React from 'react';
 import { useStoreContext } from '../utils/state';
 import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY } from '../utils/actions';
-import { idbPromise } from '../utils/helpers';
 
-const CartItem = ({ product }) => {
+
+
+const CartItem = ({ cartItem }) => {
 
   const [, dispatch] = useStoreContext();
 
-  const removeFromCart = product => {
+  const removeFromCart = cartItem => {
     dispatch({
       type: REMOVE_FROM_CART,
-      _id: product._id
+      _id: cartItem.product._id
     });
-    idbPromise('cart', 'delete', { ...product });
-
   };
 
   const onChange = (e) => {
@@ -21,17 +20,17 @@ const CartItem = ({ product }) => {
     if (value === '0') {
       dispatch({
         type: REMOVE_FROM_CART,
-        _id: product._id
+        _id: cartItem.product._id
       });
-      idbPromise('cart', 'delete', { ...product });
+      idbPromise('cart', 'delete', { ...cartItem });
 
     } else {
       dispatch({
         type: UPDATE_CART_QUANTITY,
-        _id: product._id,
-        purchaseQuantity: parseInt(value)
+        _id: cartItem.product._id,
+        quantity: parseInt(value)
       });
-      idbPromise('cart', 'put', { ...product, purchaseQuantity: parseInt(value) });
+      idbPromise('cart', 'put', { ...cartItem, quantity: parseInt(value) });
 
     }
   }
@@ -39,27 +38,14 @@ const CartItem = ({ product }) => {
   return (
     <div className="flex-row">
       <div>
-        <img
-          src={`/images/${product.image}`}
-          alt=""
-        />
-      </div>
-      <div>
-        <div>{product.name}, ${product.price}</div>
+        <div>{cartItem.product.name}, ${cartItem.style.price}</div>
         <div>
-          <span>Qty:</span>
-          <input
-            type="number"
-            placeholder="1"
-            value={product.purchaseQuantity}
-            onChange={onChange}
-          />
+          <span>Qty:{cartItem.quantity}</span>
           <span
             role="img"
             aria-label="trash"
-            onClick={() => removeFromCart(product)}
+            onClick={() => removeFromCart(cartItem)}
           >
-            🗑️
           </span>
         </div>
       </div>

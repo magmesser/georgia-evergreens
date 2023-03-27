@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react"; 
 import { loadStripe } from "@stripe/stripe-js";
 import CheckoutForm from "./CheckoutForm";
+import { useStoreContext } from '../utils/state';
 
-function Payment(props) {
+function Payment({cartItem}) {
+  const [, dispatch] = useStoreContext();
 
   const [stripePromise, setStripePromise] = useState(null);
   const [clientSecret, setClientSecret] = useState("");
