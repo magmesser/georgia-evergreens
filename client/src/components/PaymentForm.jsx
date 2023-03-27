@@ -44,7 +44,7 @@ const PaymentForm = () => {
 
     return (
         <div className="cart">
-            <div>
+            <div className='flex justify-center'>
                 <Card className="w-full max-w-[26rem] shadow-lg m-20 rounded-md align-content:center">
                     <CardBody className="[background-color:#A7D9D0] rounded-md">
                         <div className="[color:#064025] mb-6 p-4">
