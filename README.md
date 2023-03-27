@@ -87,8 +87,9 @@
 
    ## Images
    
-   ![image](https://user-images.githubusercontent.com/113871469/228079712-6d6ddfab-a848-4af9-8921-9c71345e9f0a.png)
-   
+  <img width="407" alt="Screenshot 2023-03-27 at 3 19 07 PM" src="https://user-images.githubusercontent.com/113871469/228080351-2c1f13dc-8be3-49ac-bd5b-e91248a442cf.png">
+
+
 
    ## Team
 
