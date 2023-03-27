@@ -4,7 +4,7 @@ import { useLazyQuery } from '@apollo/client';
 import { QUERY_CHECKOUT } from '../utils/queries';
 import { idbPromise } from '../utils/helpers';
 import CartItem from './CartItem';
-import CheckoutForm from '../pages/CheckoutForm';
+// import CheckoutForm from '../pages/CheckoutForm';
 import Auth from '../utils/auth';
 import { useStoreContext } from '../utils/state';
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../utils/actions';
