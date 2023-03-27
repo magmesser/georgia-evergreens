@@ -93,7 +93,11 @@
 
    ## Team
 
-   For additional quesitons please contact any member of the development team.
+   For additional quesitons please contact any member of the development team.  
+   
+   
+   ![Image 3-27-23 at 6 36 PM](https://user-images.githubusercontent.com/113871469/228085324-690295af-792d-4ba3-9056-ab0628e500e5.jpeg)
+
 
    Bryan Quero 🎮  
    [GitHub](https://github.com/Bryan3D)  
