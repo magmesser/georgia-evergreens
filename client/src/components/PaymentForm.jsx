@@ -134,8 +134,29 @@ export default PaymentForm;
 
 
 
+// import React, { useState, useEffect } from "react";
+// // import "./App.css";
+// import { useStoreContext } from '../utils/state';
+// import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY } from '../utils/actions';
+// import CartItem from './CartItem';
 
+// const ProductDisplay = ({cartItem}) => {
+//   const [state, dispatch] = useStoreContext();
 
+//   function calculateTotal() {
+//     let sum = 0;
+//     state.cart.forEach((cartItem) => {
+//         sum += cartItem.style.price * cartItem.quantity;
+//     });
+//     return sum.toFixed(2);
+// }
+//   return (
+//     <>
+//     <div className="product">
+//     <div>
+//                 {state.cart.map((cartItem) => (
+//                     <CartItem key={cartItem.product._id} cartItem={cartItem} />
+//                 ))}
 
 
 
@@ -210,32 +231,16 @@ export default PaymentForm;
 //                 }
 
 
-//             } catch (error) {
-//                 console.log('Error', error)
-//             }
-//         } else {
-//             console.log(error.message)
+//         if (query.get("canceled")) {
+//             setMessage(
+//                 "Order canceled -- continue to shop around and checkout when you're ready."
+//             );
 //         }
-//     }
+//     }, []);
 
-//     return (
-//         <>
-//             <Elements>
-//                 {!success ?
-//                     <form onSubmit={handleSubmit}>
-//                         <fieldset className="FormGroup">
-//                             <div className="FormRow">
-//                                 <CardElement options={CARD_OPTIONS} />
-//                             </div>
-//                         </fieldset>
-//                         <button>Pay</button>
-//                     </form>
-//                     :
-//                     <div>
-//                         <h2>Thank you for your purchase!🌲</h2>
-//                     </div>
-//                 }
-//             </Elements>
-//         </>
-//     )
+//     return message ? (
+//         <Message message={message} />
+//     ) : (
+//         <ProductDisplay />
+//     );
 // }
