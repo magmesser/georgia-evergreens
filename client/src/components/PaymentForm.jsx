@@ -10,6 +10,11 @@ import { useStoreContext } from '../utils/state';
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../utils/actions';
 import { BsCartFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import {
+    Card,
+    CardHeader,
+    CardBody,
+} from "@material-tailwind/react";
 
 const stripePromise = loadStripe('pk_test_51Mm4DBEt2stpP8jUT68EIfZbGssaCGRsg73eXO6tvXL1XU6JmQ26c85ZUYqSm4ijQBkYyuiz9g07zCh9oOpL7hFD0027eiPLnu');
 
@@ -38,17 +43,23 @@ const PaymentForm = () => {
     }
 
     return (
-        <div className='cart'>
+        <div className="cart">
             <div>
+                <Card className="w-full max-w-[26rem] shadow-lg m-20 rounded-md align-content:center">
+                    <CardBody className="[background-color:#A7D9D0] rounded-md">
+                        <div className="[color:#064025] mb-6 p-4">
                 {state.cart.map((cartItem) => (
                     <CartItem key={cartItem.product._id} cartItem={cartItem} />
                 ))}
 
-                <div className='flex-row space-between'>
+                <div className='group mt-8 flex justify-center items-center gap-6 p-4'>
                     <strong>Total: ${calculateTotal()}</strong>
                     <button className="[background-color:#064025] px-4 py-2 rounded-lg">
-                    <Link to={`/payment`}>Checkout</Link></button>
+                    <Link to={`/payment`} className="[color:#FFFFFF]">Checkout</Link></button>
                 </div>
+                </div>
+               </CardBody> 
+               </Card>
             </div>
         </div>
     );
