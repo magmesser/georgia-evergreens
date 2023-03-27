@@ -46,7 +46,7 @@ const Cart = () => {
     }
 
     return (
-        <div className='cart'>
+        <div className='cart flex flex-wrap'>
             <div className='close' onClick={toggleCart}>
                 [X]
             </div>
@@ -55,7 +55,7 @@ const Cart = () => {
                     <CartItem key={cartItem.product._id} cartItem={cartItem} />
                 ))} */}
 
-                <div className='flex-row space-between'>
+                <div className='gap-5 '>
                     <strong>Total: ${calculateTotal()}</strong>
                     <button className="[background-color:#064025] px-4 py-2 rounded-lg">
                     <Link to={`/payment`}>Checkout</Link></button>

@@ -31,7 +31,7 @@ function Header() {
               <BsPersonCircle className="text-2xl"/>
             </Link>
           </li>
-          <li className="m-5 mr-4 md:mr-6 float-right">
+          <li className="mt-2 mr-4 md:mr-6 float-right">
             <Cart />
           </li>
         </ul>
