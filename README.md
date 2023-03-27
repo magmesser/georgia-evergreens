@@ -31,25 +31,32 @@
     "@apollo/client": "^3.5.8",
     "@heroicons/react": "^2.0.16",
     "@material-tailwind/react": "^1.4.2",
+    "@stripe/react-stripe-js": "^2.1.0",
+    "@stripe/stripe-js": "^1.52.0",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@vitejs/plugin-react": "^3.1.0",
+    "autoprefixer": "^10.4.14",
+    "axios": "^1.3.4",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.0.3",
+    "emailjs-com": "^3.2.0",
+    "express": "^4.18.2",
     "graphql": "^15.4.0",
     "jwt-decode": "^3.1.2",
+    "node-emoji": "^1.11.0",
+    "postcss": "^8.4.21",
     "react": "^18.2.0",
     "react-client": "^1.0.1",
     "react-dom": "^18.2.0",
     "react-easy-swipe": "^0.0.23",
     "react-icons": "^4.8.0",
+    "react-multi-carousel": "^2.8.2",
     "react-router-dom": "^6.2.1",
-    "vite": "^4.1.0"
-  },
-  "devDependencies": {
-    "@types/react": "^18.0.27",
-    "@types/react-dom": "^18.0.10",
-    "@vitejs/plugin-react": "^3.1.0",
-    "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.21",
+    "stripe": "^11.16.0",
     "tailwindcss": "^3.2.7",
     "vite": "^4.1.0"
-  },
+  }
   ```
 
   ## Contributing
@@ -79,9 +86,9 @@
    [Georgia Evergreens Presentation](https://www.canva.com/design/DAFd-ZusWGM/OdWZNNmesvYQDNnJA5wSAA/view?utm_content=DAFd-ZusWGM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
    ## Images
-
-   `Coming Soon!`
-
+   
+   ![image](https://user-images.githubusercontent.com/113871469/228079712-6d6ddfab-a848-4af9-8921-9c71345e9f0a.png)
+   
 
    ## Team
 
