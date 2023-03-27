@@ -21,7 +21,7 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import SingleProduct from "./pages/SingleProduct";
 import OrderHistory from "./components/OrderHistory";
-import Payment from "./components/PaymentForm";
+import PaymentForm from "./components/PaymentForm";
 import Completion from "./components/Completion";
 
 // const PORT = process.env.PORT || 5000;
@@ -71,7 +71,7 @@ function App() {
               <Route path="/orderhistory" element={<OrderHistory />} />
               <Route path="/contact" element={<ContactForm />} />
               <Route path="/profile" element={<Profile />} />
-              <Route path="/payment" element={<Payment />} />
+              <Route path="/payment" element={<PaymentForm />} />
               <Route path="/completion" element={<Completion />} />
               {/* <Route path="/cart" element={<MyCart />} /> */}
             </Routes>
